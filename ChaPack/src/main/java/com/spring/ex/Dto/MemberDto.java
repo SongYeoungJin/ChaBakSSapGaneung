@@ -1,6 +1,6 @@
 package com.spring.ex.Dto;
 
-public class MemberDto {	//회원테이블
+public class MemberDto {	//회원테이블입니다
 	private int m_num;
 	private String m_name;
 	private String m_email;
