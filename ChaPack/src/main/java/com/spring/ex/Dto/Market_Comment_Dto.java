@@ -2,7 +2,7 @@ package com.spring.ex.Dto;
 
 import java.sql.Date;
 
-public class Market_comment_Dto {//차박용품후기 테이블
+public class Market_Comment_Dto {//차박용품후기 테이블
 	private int mc_num;				// 고유번호
 	private int o_num;				// 주문고유번호
 	private String mc_mar_name;		// 상품후기상품내역

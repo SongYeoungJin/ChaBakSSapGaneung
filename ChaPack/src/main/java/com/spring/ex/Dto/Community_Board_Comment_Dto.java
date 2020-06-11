@@ -2,7 +2,7 @@ package com.spring.ex.Dto;
 
 import java.sql.Date;
 
-public class Community_board_comment_Dto {	//커뮤니티게시판댓글 테이블
+public class Community_Board_Comment_Dto {	//커뮤니티게시판댓글 테이블
 	private int cbc_num;			//고유번호
 	private String cbc_m_num;		//댓글작성회원번호
 	private String cbc_memo;		//댓글작성내용
