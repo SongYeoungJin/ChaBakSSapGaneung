@@ -16,7 +16,7 @@
 		<typeAlias type="com.spring.ex.dto.Vanlife_board_comments_Dto" alias="Vanlife_board_comments_Dto"></typeAlias>
 		<typeAlias type="com.spring.ex.dto.Vanlife_board_Dto" alias="Vanlife_board_Dto"></typeAlias>
 	</typeAliases>
-	
+	`
 	
 	<mappers>
 		<mapper resource="mapper/AdminMapper.xml" />
