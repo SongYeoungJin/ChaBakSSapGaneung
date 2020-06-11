@@ -18,6 +18,8 @@
 	</typeAliases>
 	
 	<mappers>
+		<mapper></mapper>
+		<mapper></mapper>
 		<mapper resource="mapper/AdminMapper.xml" />
 		<mapper resource="mapper/CartMapper.xml" />
 		<mapper resource="mapper/Community_board_commentMapper.xml" />
