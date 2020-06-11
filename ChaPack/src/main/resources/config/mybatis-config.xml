@@ -1,1 +1,34 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.spring.ex.dto.Admin_Dto" alias="Admin_Dto"></typeAlias>
+		<typeAlias type="com.spring.ex.dto.Cart_Dto" alias="Cart_Dto"></typeAlias>
+		<typeAlias type="com.spring.ex.dto.Community_board_comment_Dto" alias="Community_board_comment_Dto"></typeAlias>
+		<typeAlias type="com.spring.ex.dto.Community_board_Dto" alias="Community_board_Dto"></typeAlias>
+		<typeAlias type="com.spring.ex.dto.Market_comment_Dto" alias="Market_comment_Dto"></typeAlias>
+		<typeAlias type="com.spring.ex.dto.Market_Dto" alias="Market_Dto"></typeAlias>
+		<typeAlias type="com.spring.ex.dto.Member_Dto" alias="Member_Dto"></typeAlias>
+		<typeAlias type="com.spring.ex.dto.Order_Dto" alias="Order_Dto"></typeAlias>
+		<typeAlias type="com.spring.ex.dto.Reservation_Dto" alias="Reservation_Dto"></typeAlias>
+		<typeAlias type="com.spring.ex.dto.Vanlife_board_comments_Dto" alias="Vanlife_board_comments_Dto"></typeAlias>
+		<typeAlias type="com.spring.ex.dto.Vanlife_board_Dto" alias="Vanlife_board_Dto"></typeAlias>
+	</typeAliases>
+	
+	
+	<mappers>
+		<mapper resource="mapper/AdminMapper.xml" />
+		<mapper resource="mapper/CartMapper.xml" />
+		<mapper resource="mapper/Community_board_commentMapper.xml" />
+		<mapper resource="mapper/Community_boardMapper.xml" />
+		<mapper resource="mapper/Market_commentMapper.xml" />
+		<mapper resource="mapper/MarketMapper.xml" />
+		<mapper resource="mapper/MemberMapper.xml" />
+		<mapper resource="mapper/OrderMapper.xml" />
+		<mapper resource="mapper/ReservationMapper.xml" />
+		<mapper resource="mapper/Vanlife_board_comments.xml" />
+		<mapper resource="mapper/Vanlife_board.xml" />
+	</mappers>
+</configuration>
