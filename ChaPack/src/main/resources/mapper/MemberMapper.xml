@@ -3,28 +3,28 @@
      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
      "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  <!-- 여기는 매핑할 MemberMapper.java의 풀패키지명을 적어준다-->
-<mapper namespace="com.spring.ex.MemberMapper">
- 
-    <resultMap type="Member" id="MemberResultMap">
-        <result property="_name" column="NAME" />
-        <result property="_email" column="EMAIL" />
-        <result property="_phone" column="PHONE" />
-    </resultMap>
+ <!--  <mapper namespace="com.spring.ex.Mapping.MemberMapping">-->
+ <mapper namespace="MemberMapping">
+
  
     <!-- id의 경우에는 Mapper.java에 동일하게 사용해야된다. -->
-    <select id="getMembers" resultMap="MemberResultMap">
+    <select id="userSelectAll" parameterType="Member_Dto" resultType="Member_Dto">
         SELECT * FROM tab_mybatis
     </select>
     
+     <select id="userSelectOne" parameterType="Member_Dto" resultType="Member_Dto">
+        SELECT * FROM tab_mybatis WHERE _name=#{name}
+    </select>
+    
     <!-- parameterType 에는 구문에 전달될 파라미터의 패키지 경로를 포함한 전체 클래스명이나 별칭이 들어간다  -->
-    <insert id="insertMember" parameterType="com.spring.ex.Member" >
+    <insert id="userInsertMember" parameterType="com.spring.ex.Member" >
         INSERT INTO tab_mybatis values(#{_name},#{_email},#{_phone})
     </insert>
     
     <!-- update와 delete는 생략한다. -->
     <update id=""></update>
     
-    <delete id="deleteMember" parameterType="com.spring.ex.Member">
+    <delete id="userDeleteMember" parameterType="com.spring.ex.Member">
         DELETE tab_mybatis WHERE(name=#{_name})
     </delete>
  

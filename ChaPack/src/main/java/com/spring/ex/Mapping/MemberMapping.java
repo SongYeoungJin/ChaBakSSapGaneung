@@ -5,8 +5,9 @@ import java.util.List;
 import com.spring.ex.Dto.Member_Dto;
 
 public interface MemberMapping {
-	List<MemberMapping> getMembers();
-    void insertMember(Member_Dto member);//뭐 넣어야하징?
-    void updateMember(int m_num); //뭐 넣어야하징?
-    void deleteMember(String name);//뭐 넣어야하징?
+	//public List<MemberMapping> getMembers();
+	public Member_Dto userSelectOne(Member_Dto dto);
+    public void insertMember(Member_Dto member);//萸� �꽔�뼱�빞�븯吏�?
+    public void updateMember(int m_num); //萸� �꽔�뼱�빞�븯吏�?
+    public void deleteMember(String name);//萸� �꽔�뼱�빞�븯吏�?
 }
