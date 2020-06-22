@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.spring.ex.Service.MemberService;
 import com.spring.ex.Dto.MemberDto;
-import com.spring.ex.Service.IMemberService;
 
 
 @Controller
@@ -42,19 +41,7 @@ public class MemberController {
 		logger.info("post register");
 	}
 	
-	@Autowired
-	IMemberService memSer;
-
-	// 회원가입
-	@RequestMapping(value = "signUp.do", method = RequestMethod.POST)
-	public String index_do(HttpServletRequest request, HttpServletResponse response, Model model, MemberDto dto)
-			throws Exception {
-		response.setContentType("text/html; charset=UTF-8");
-		request.setCharacterEncoding("UTF-8");
-		response.setCharacterEncoding("UTF-8");
-		memSer.userInsert(dto);
-		return "main/main";
-	}
+	
 }
 
 
