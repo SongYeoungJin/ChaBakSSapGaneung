@@ -20,6 +20,7 @@ public class MemberController {
 	IMemberService memSer;
 
 	// 회원가입
+	
 	@RequestMapping(value = "signUp.do", method = RequestMethod.POST)
 	public String index_do(HttpServletRequest request, HttpServletResponse response, Model model, MemberDto dto)
 			throws Exception {
@@ -29,7 +30,16 @@ public class MemberController {
 		memSer.userInsert(dto);
 		return "main/main";
 	}
-	
+	/*
+	@RequestMapping(value = "Join.do", method = RequestMethod.GET)
+	public String join(HttpServletRequest request, HttpServletResponse response, Model model)throws Exception
+	{
+		response.setContentType("text/html; charset=UTF-8");
+	      request.setCharacterEncoding("UTF-8");
+	        response.setCharacterEncoding("UTF-8");
+		return "Login/Join";
+	}
+	*/
 	@RequestMapping("login")
 	public String login() {
 		return "Login/login";

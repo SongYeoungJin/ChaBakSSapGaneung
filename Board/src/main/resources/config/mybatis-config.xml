@@ -18,5 +18,7 @@
 		<mapper resource="mapper/boardMapper.xml" />
 		<mapper resource="mapper/replyMapper.xml" />
 		-->
+		<mapper resource="mapper/memberMapper.xml" />
+		
 	</mappers>
 </configuration>
