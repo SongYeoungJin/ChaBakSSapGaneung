@@ -5,7 +5,7 @@
 <mapper namespace="replyMapper">
 
 <!-- 댓글 조회 -->
-	<select id="readReply" resultType="BCDto">
+	<select id="readReply" resultType="com.spring.ex.Dto.Community_Board_Comment_Dto">
     	SELECT
     		  cb_num, cb_m_num, cb_memo, cb_author, cb_regdate
     	 FROM community_board_comment
@@ -25,19 +25,19 @@
 	</insert>
 	
 <!-- 댓글 수정 -->
-	<update id="updateReply" parameterType="BCDto">
+	<update id="updateReply" parameterType="com.spring.ex.Dto.Community_Board_Comment_Dto">
 		UPDATE community_board_comment SET cb_memo = #{cb_memo}
 		WHERE cb_m_num = #{cb_m_num}
 	</update>
 
 <!-- 댓글 삭제 -->
-	<delete id="deleteReply" parameterType="BCDto">
+	<delete id="deleteReply" parameterType="com.spring.ex.Dto.Community_Board_Comment_Dto">
 		DELETE FROM community_board_comment
 		WHERE cb_m_num = #{cb_m_num}
 	</delete>
 	
 <!-- 선택된 댓글 조회 -->
-	<select id="selectReply" resultType="BCDto">
+	<select id="selectReply" resultType="com.spring.ex.Dto.Community_Board_Comment_Dto">
 		SELECT
 				cb_num
 			  , cb_m_num
