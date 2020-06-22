@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="boardMapper">
+	<!-- 게시판 글 작성 -->
+	<insert id="insert" useGeneratedKeys="true" keyProperty="cb_m_num">
+	    INSERT INTO community_board(     
+	   					        cb_title 
+	   					       , cb_memo 
+	   					       , cb_author )
+	                  VALUES(     
+	                 		    #{cb_title,jdbcType=VARCHAR}
+	                 		   , #{cb_memo,jdbcType=VARCHAR}
+	                 		   , #{cb_author,jdbcType=VARCHAR}  )
+   
+    </insert>
+    <select id="list" resultType="com.spring.ex.Dto.Community_Board_Dto">
+		SELECT   cb_num
+			   , cb_title
+			   , cb_memo
+			   , cb_author
+		  FROM community_board
+		  ORDER BY cb_num DESC
+	</select>
+   
+	<select id="listPage" resultType="com.spring.ex.Dto.Community_Board_Dto" parameterType="com.spring.ex.Dto.SearchCriteria">
+		SELECT  cb_num, 
+		        cb_title, 
+		        cb_memo,
+		        cb_author, 
+		        cb_regdate
+		 FROM ( 
+		       SELECT  cb_num, 
+		        	cb_title, 
+		        	cb_memo,
+		        	cb_author, 
+		        	cb_regdate,
+		               ROW_NUMBER() OVER(ORDER BY cb_num DESC) AS cb_m_num
+		         FROM community_board
+		         WHERE 1=1 
+		         	<include refid="search"></include>
+		                       ) community
+		WHERE cb_m_num BETWEEN #{rowStart} AND #{rowEnd}
+		ORDER BY cb_num DESC
+	</select>
+	
+	<select id="listCount" parameterType="com.spring.ex.Dto.SearchCriteria" resultType="int">
+		SELECT COUNT(cb_num)
+		   FROM community_board
+		   WHERE 1=1
+		<include refid="search"></include>	
+		   AND cb_num > 0
+	</select>
+	
+	<sql id="search">
+		<if test="searchType != null">
+			<if test="searchType == 't'.toString()">AND cb_title LIKE '%' || #{keyword} || '%'</if>
+			<if test="searchType == 'm'.toString()">AND cb_memo LIKE '%' || #{keyword} || '%'</if>
+			<if test="searchType == 'a'.toString()">AND cb_author LIKE '%' || #{keyword} || '%'</if>
+			<if test="searchType == 'tm'.toString()">AND (cb_title LIKE '%' || #{keyword} || '%') or (cb_memo LIKE '%' || #{keyword} || '%')</if>
+		</if>
+	</sql>
+	
+	<select id="read" resultType="com.spring.ex.Dto.Community_Board_Dto">
+		SELECT  cb_num, 
+		        cb_title, 
+		        cb_memo,
+		        cb_author, 
+		        cb_regdate
+		  FROM community_board
+		 WHERE cb_num = #{cb_num}
+	</select>
+	
+	<update id="update" parameterType="com.spring.ex.Dto.Community_Board_Dto">
+		UPDATE community_board
+		   SET cb_title = #{cb_title},
+		   	   cb_memo  = #{cb_memo}
+		 WHERE cb_num = #{cb_num} 
+	</update>
+	
+	<delete id="delete" parameterType="int">
+		DELETE 
+		  FROM community_board
+		 WHERE cb_num = #{cb_num}
+	</delete>
+   
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+

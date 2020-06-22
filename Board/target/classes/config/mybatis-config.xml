@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+	<!-- 
+		<typeAlias type="com.spring.ex.Dto.Community_Board_Comment_Dto" alias="BCDto"></typeAlias>
+		<typeAlias type="com.spring.ex.Dto.Community_board_Dto" alias="BDto"></typeAlias>
+		<typeAlias type="com.spring.ex.Dto.SearchCriteria" alias="SearchCriteria"></typeAlias>
+		<typeAlias type="com.spring.ex.Dto.Criteria" alias="Criteria"></typeAlias>
+		<typeAlias type="com.spring.ex.Dto.PageMaker" alias="PageMaker"></typeAlias>
+	-->	
+	</typeAliases>
+	
+	<mappers>
+	<!-- 
+		<mapper resource="mapper/boardMapper.xml" />
+		<mapper resource="mapper/replyMapper.xml" />
+		-->
+	</mappers>
+</configuration>
