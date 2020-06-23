@@ -19,7 +19,7 @@ public class RController {
 	/*
 	 * @Autowired IMemberService memService;
 	 * 
-	 * //회원가입
+	 * //�쉶�썝媛��엯
 	 * 
 	 * @RequestMapping("/join") public String join(HttpServletRequest request, Model
 	 * model) {
@@ -29,14 +29,14 @@ public class RController {
 	 * return "join";
 	 */
 	
-	//회원가입페이지
+	//�쉶�썝媛��엯�럹�씠吏�
 	@RequestMapping(value = "Join.do", method = RequestMethod.GET)
 	public String join(HttpServletRequest request, HttpServletResponse response, Model model)throws Exception
 	{
 		response.setContentType("text/html; charset=UTF-8");
 	      request.setCharacterEncoding("UTF-8");
 	        response.setCharacterEncoding("UTF-8");
-		return "Login/Join";
+		return "join";
 	}
 	
 
