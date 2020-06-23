@@ -47,7 +47,14 @@ public class MemberController {
 	public String test() {
 		return "main/main";
 	}
-	
+	@RequestMapping("abs")
+	public String test1() {
+		return "place/abs";
+	}
+	@RequestMapping("ab")
+	public String test12() {
+		return "place/ab";
+	}
 
 	
 	// �쉶�썝媛��엯

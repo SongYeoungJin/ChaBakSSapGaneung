@@ -1,11 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+   pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
+
 <html>
 <head>
 <!doctype html>
 <html class="no-js" lang="">
 <head>
+  
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>장소등록</title>
@@ -191,15 +194,10 @@
 <div id="place">
 
 
-<form action="${pageContext.request.contextPath}/place" method="post" id="place">
-<%
-    // 인코딩
-   /*  request.setCharacterEncoding("UTF-8"); */
-response.setContentType("text/html;charset=UTF-8");
-%>
+<form action="${pageContext.request.contextPath}/place" method="post" accept-charset="UTF-8">
+
 <label>이름 :</label>
 <input type = "text" name = p_name id="p_name" /><br>
-
 <label>위도 :</label>
 <input type = "text" name = p_lat id="p_lat"/>
 <label>경도 :</label> 
