@@ -7,12 +7,14 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 
 import com.spring.ex.Dto.MemberDto;
+import com.spring.ex.Dto.PageMaker;
+import com.spring.ex.Dto.SearchCriteria;
 import com.spring.ex.Dto.placeDTO;
 import com.spring.ex.Service.IMemberService;
 import com.spring.ex.Service.placeService;
@@ -68,7 +70,16 @@ public class MemberController {
 		return "place/place";
 	}
 	
+	// 게시판 목록 조회
+		@RequestMapping(value = "place2", method = RequestMethod.GET)
+		public String list(Model model, @ModelAttribute("scri") SearchCriteria scri) throws Exception{
 	
+			model.addAttribute("place", plSer.list(scri));
+	
+			
+			return  "place/place2";
+		}
+		
 	@RequestMapping(value = "admin_registerPlace", method = RequestMethod.GET)
 	public String admin_registerPlace(HttpServletRequest request, HttpServletResponse response, Model model)throws Exception
 	{

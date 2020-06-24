@@ -110,16 +110,16 @@
 			    {
 			    	   content : '<div class="customoverlay_main">' +
 				        '  <a  href="Review">' +
-				        '    <span style="color:purple"> <%=name %></span>' +
+				        '    <span style="color:purple"><%=request.getParameter("name")%></span>' +
 				        '  </a>' +
 				        '</div>',   
 			        title: "<%=request.getParameter("name")%>",
-			        latlng: new kakao.maps.LatLng(<%=request.getParameter("p_lat")%>, <%=request.getParameter("p_lng")%>)
+			        latlng: new kakao.maps.LatLng(<%=request.getParameter("lat")%>, <%=request.getParameter("lng")%>)
 			    }
 			];
 
 		// 마커 이미지의 이미지 주소입니다
-		var imageSrc = "resources/img/aa.png"
+			var imageSrc = "resources/img/aa.png"
 	
 		    
 		for (var i = 0; i < positions.length; i ++) {

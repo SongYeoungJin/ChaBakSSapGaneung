@@ -15,15 +15,12 @@
 	
 	
 	
-<!-- 	<insert id="placeInsert" useGeneratedKeys="true" keyProperty="p_num">
-	    INSERT INTO place(     
-	   					       p_name
-	   					       , p_lat 
-	   					       , p_lng )
-	                  VALUES(     
-	                 		    #{p_name,jdbcType=VARCHAR}
-	                 		   , #{p_lat,jdbcType=INT}
-	                 		   , #{p_lng,jdbcType=INT}  )
-   
-    </insert> -->
+<select id="list" resultType="com.spring.ex.Dto.placeDTO">
+		SELECT   p_num
+			   , p_name
+			   , p_lat
+			   , p_lng
+		  FROM place
+		  ORDER BY p_num DESC
+	</select>
 </mapper>
