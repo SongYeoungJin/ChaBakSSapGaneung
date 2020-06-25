@@ -1,12 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
+
 <html>
 <head>
 <!doctype html>
 <html class="no-js" lang="">
 <head>
-<meta charset="utf-8">
+  
+<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>장소등록</title>
 <meta name="description" content="Ela Admin - HTML5 Admin Template">
@@ -184,8 +187,13 @@
 	
 	
 	
-	
-	
+
+	<!-- ----------content------------ -->
+
+
+<div id="place">
+
+
 <form action="${pageContext.request.contextPath}/place" method="post" accept-charset="UTF-8">
 
 <label>이름 :</label>
@@ -197,7 +205,8 @@
 <input type="submit" value="등록하기" />
 
 </form>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=01f7615ee8d025a981b28bb6241ff9f0"></script>
+</div>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=01f7615ee8d025a981b28bb6241ff9f0&libraries=services"></script>
 <script>
 
 var container = document.getElementById('map');
@@ -206,32 +215,46 @@ var options = {
 	level: 13
 };
 var map = new kakao.maps.Map(container, options);
-
+//주소 좌표 변환 객체생성
+var geocoder = new kakao.maps.services.Geocoder();
+//주소로 좌표검색
+geocoder.addressSearch('서울특별시 동작구', function(result,status) {
+	//검색이 완료되면
+	if (status === kakao.maps.services.Status.OK) {
+		var coords = new kakao.maps.LagLng(result[0].y, result[0].x);
+		//마커로 표시
+		var marker=new kakao.maps.Marker({
+			map:map,
+			position:coords
+		});
+		//인포위도우로 장소에 대한 설명
+	}
+})
 //지도를 클릭한 위치에 표출할 마커입니다
 var marker = new kakao.maps.Marker({ 
-    // 지도 중심좌표에 마커를 생성합니다 
-    position: map.getCenter() 
+ // 지도 중심좌표에 마커를 생성합니다 
+ position: map.getCenter() 
 }); 
-// 지도에 마커를 표시합니다
+//지도에 마커를 표시합니다
 marker.setMap(map);
 
-// 지도에 클릭 이벤트를 등록합니다
-// 지도를 클릭하면 마지막 파라미터로 넘어온 함수를 호출합니다
+//지도에 클릭 이벤트를 등록합니다
+//지도를 클릭하면 마지막 파라미터로 넘어온 함수를 호출합니다
 kakao.maps.event.addListener(map, 'click', function(mouseEvent) {        
-    
-    // 클릭한 위도, 경도 정보를 가져옵니다 
-    var latlng = mouseEvent.latLng; 
-    
-    // 마커 위치를 클릭한 위치로 옮깁니다
-    marker.setPosition(latlng);
-    
-    var message = '클릭한 위치의 위도는 ' + latlng.getLat() + ' 이고, ';
-    message += '경도는 ' + latlng.getLng() + ' 입니다';
-    
-    var resultDiv = document.getElementById('clickLatlng'); 
-    resultDiv.innerHTML = message;
-    
+ 
+ // 클릭한 위도, 경도 정보를 가져옵니다 
+ var latlng = mouseEvent.latLng; 
+ 
+ // 마커 위치를 클릭한 위치로 옮깁니다
+ marker.setPosition(latlng);
+ 
+ var message = '클릭한 장소의 위도는 ' + latlng.getLat() + ' 이고, ';
+ message += '경도는 ' + latlng.getLng() + ' 입니다';
+ 
+ var resultDiv = document.getElementById('clickLatlng'); 
+ resultDiv.innerHTML = message;
 });
+
 
 </script>
 

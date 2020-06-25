@@ -2,8 +2,8 @@ package com.spring.ex.Dto;
 
 public class placeDTO {
 	private String p_name;
-	private int p_lat;
-	private int p_lng;
+	private double p_lat;
+	private double p_lng;
 	private int p_num;
 	public String getP_name() {
 		return p_name;
@@ -11,16 +11,17 @@ public class placeDTO {
 	public void setP_name(String p_name) {
 		this.p_name = p_name;
 	}
-	public int getP_lat() {
+	
+	public double getP_lat() {
 		return p_lat;
 	}
-	public void setP_lat(int p_lat) {
+	public void setP_lat(double p_lat) {
 		this.p_lat = p_lat;
 	}
-	public int getP_lng() {
+	public double getP_lng() {
 		return p_lng;
 	}
-	public void setP_lng(int p_lng) {
+	public void setP_lng(double p_lng) {
 		this.p_lng = p_lng;
 	}
 	public int getP_num() {

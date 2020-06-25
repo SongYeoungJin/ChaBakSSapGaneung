@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
+   <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 
 <html>
@@ -30,7 +32,15 @@
  <%@ include file="../../include/navigator.jsp" %>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=01f7615ee8d025a981b28bb6241ff9f0"></script>
+	
+	
 
+ 
+ <c:forEach items="${list}" var = "list">
+ 	<c:out value="p_name"></c:out>
+ 	<c:out value="p_lat"></c:out>
+ 	<c:out value="p_lng"></c:out>
+ </c:forEach>
  
 	<script>
 		var container = document.getElementById('map');
@@ -40,72 +50,18 @@
 		};
 		var map = new kakao.maps.Map(container, options);
 		
-		
+
 		// 마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다 
 		var positions = [
 			   {
 			        content : '<div class="customoverlay_main">' +
 			        '  <a  href="Review">' +
-			        '    <span style="color:red">제부도</span>' +
+			        '    <span style="color:red">${list.p_name}</span>' +
 			        '  </a>' +
 			        '</div>',   
 			        title: "제부도",
-			        latlng: new kakao.maps.LatLng(37.1692, 126.628)
-			    },
-			    {
-			    	   content : '<div class="customoverlay_main">' +
-				        '  <a  href="Review">' +
-				        '    <span  style="color:black">송정해수욕장</span>' +
-				        '  </a>' +
-				        '</div>',   
-			        title: "송정해수욕장",
-			        latlng: new kakao.maps.LatLng(35.178621, 129.199672)
-			    },
-			    {
-			    	   content : '<div class="customoverlay_main">' +
-				        '  <a  href="Review">' + 
-				        '    <span  style="color:pink">백사장해수욕장</span>' +
-				        '  </a>' +
-				        '</div>',   
-			        title: "백사장해수욕장",
-			        latlng: new kakao.maps.LatLng(36.579109, 126.314518)
-			    },
-			    {
-			    	   content : '<div class="customoverlay_main">' +
-				        '  <a  href="Review">' +
-				        '    <span style="color:yellow">모사금해변</span>' +
-				        '  </a>' +
-				        '</div>',   
-			        title: "모사금해변",
-			        latlng: new kakao.maps.LatLng(34.796118, 127.756188)
-			    },
-			    {
-			    	   content : '<div class="customoverlay_main">' +
-				        '  <a  href="Review">' +
-				        '    <span  style="color:green">강원도 양양</span>' +
-				        '  </a>' +
-				        '</div>',   
-			        title: "강원도 양양",
-			        latlng: new kakao.maps.LatLng(38.139311, 128.615376)
-			    },
-			    {
-			    	   content : '<div class="customoverlay_main">' +
-				        '  <a  href="Review">' +
-				        '    <span style="color:blue">울기해변</span>' +
-				        '  </a>' +
-				        '</div>',   
-			        title: "울기해변",
-			        latlng: new kakao.maps.LatLng(35.494516, 129.441140)
-			    },
-			    {
-			    	   content : '<div class="customoverlay_main">' +
-				        '  <a  href="Review">' +
-				        '    <span style="color:blue"><%=request.getParameter("name")%></span>' +
-				        '  </a>' +
-				        '</div>',   
-			        title: "<%=request.getParameter("name")%>",
-			        latlng: new kakao.maps.LatLng(<%=request.getParameter("p_lat")%>, <%=request.getParameter("p_lng")%>)
-			    }
+			        latlng: new kakao.maps.LatLng(${list.p_lat}, ${list.p_lng})
+			   }
 			];
 
 		// 마커 이미지의 이미지 주소입니다
