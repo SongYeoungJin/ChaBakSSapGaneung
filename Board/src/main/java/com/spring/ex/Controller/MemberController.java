@@ -24,7 +24,7 @@ import com.spring.ex.Service.placeService;
 @Controller
 public class MemberController {
 
-	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
+	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
 	@Autowired
 	IMemberService memSer;
 	

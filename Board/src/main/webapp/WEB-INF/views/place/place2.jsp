@@ -33,15 +33,17 @@
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=01f7615ee8d025a981b28bb6241ff9f0"></script>
 	
-	
 
- 
- <c:forEach items="${list}" var = "list">
- 	<c:out value="p_name"></c:out>
- 	<c:out value="p_lat"></c:out>
- 	<c:out value="p_lng"></c:out>
- </c:forEach>
- 
+ <%
+ Object list;
+ list=request.getAttribute("list"); 
+ out.println(list);
+
+ %>
+
+
+
+
 	<script>
 		var container = document.getElementById('map');
 		var options = {
@@ -54,13 +56,16 @@
 		// 마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다 
 		var positions = [
 			   {
-			        content : '<div class="customoverlay_main">' +
+				 
+			        content :		        	 
+			        	'<div class="customoverlay_main">' +
 			        '  <a  href="Review">' +
-			        '    <span style="color:red">${list.p_name}</span>' +
+			        '    <span style="color:red"></span>' +
 			        '  </a>' +
 			        '</div>',   
 			        title: "제부도",
-			        latlng: new kakao.maps.LatLng(${list.p_lat}, ${list.p_lng})
+			        latlng: new kakao.maps.LatLng( ),
+				  
 			   }
 			];
 
@@ -91,6 +96,7 @@
 		      // 마커 위에 인포윈도우를 표시합니다
 		      infowindow.open(map, marker);  
 		});
+		
 		</script>
 		
 		

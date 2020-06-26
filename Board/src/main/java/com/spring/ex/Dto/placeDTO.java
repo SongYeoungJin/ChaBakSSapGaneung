@@ -31,7 +31,5 @@ public class placeDTO {
 		this.p_num = p_num;
 	}
 	
-	
-	
 
 }
