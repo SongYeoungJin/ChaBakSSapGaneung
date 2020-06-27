@@ -37,7 +37,18 @@
 
 <body>
  <%@ include file="../../include/navigator.jsp" %>
-
+ 
+ <%
+ String name = request.getParameter("p_name");
+ String lat = request.getParameter("p_lat");
+ String lng = request.getParameter("p_lng");
+ %>
+  <%
+ Object list;
+ list=request.getAttribute("list"); 
+ out.println(list);
+ %>
+ ${list}
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=01f7615ee8d025a981b28bb6241ff9f0"></script>
 
 
@@ -49,7 +60,7 @@
 		};
 		var map = new kakao.maps.Map(container, options);
 		
-		
+		var a = document.getElementById('d');
 		// 마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다 
 		var positions = [
 			   {
@@ -75,6 +86,17 @@
 			        latlng: new kakao.maps.LatLng(35.178621, 129.199672)
 			    },
 			    {
+			        content :'<div class="overlay_info">' +
+			        '  <a  href="Review"><strong><%= name%></strong></a>' +
+			        '    <div class="desc">' +
+			        '<img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/place_thumb.png" alt="">' +
+			        ' <span class="address"><%= name%></span>' +
+			        '  </div>' +
+			        '</div>', 
+			        title:"<%= name%>",
+			        latlng: new kakao.maps.LatLng(<%= lat%>, <%= lng%>)
+			    },
+			    {
 			        content : '<div class="overlay_info">' +
 			        '  <a  href="Review"><strong>을왕리 해수욕장</strong></a>'+
 			        '    <div class="desc">' +
@@ -86,6 +108,24 @@
 			        latlng: new kakao.maps.LatLng(36.579109, 126.314518)
 			    }
 			];
+		
+<%-- 	
+	for (var i = 0; i < list.length; i++) {
+		var positions = [
+			   {
+			        content : '<div class="overlay_info">' +
+			        '  <a  href="Review"><strong>list.name[i]</strong></a>' +
+			        '    <div class="desc">' +
+			        '<img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/place_thumb.png" alt="">' +
+			       ' <span class="address">list.name[i]</span>' +
+			        '  </div>' +
+			        '</div>',  
+			        title:"list.name[i]",
+			        latlng: new kakao.maps.LatLng(list.lat[i], list.lng[i])
+			    }
+			];
+		}
+			 --%>
 
 		// 마커 이미지의 이미지 주소입니다
 		var imageSrc = "resources/img/aa.png"

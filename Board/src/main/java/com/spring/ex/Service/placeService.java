@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.spring.ex.Dao.placeDAO;
-import com.spring.ex.Dto.SearchCriteria;
 import com.spring.ex.Dto.placeDTO;
 @Service("placeService")
 public class placeService implements placeServiceImpl{
@@ -18,7 +17,7 @@ public class placeService implements placeServiceImpl{
 		return dao.userInsert(dto);
 	}
 	@Override
-	public List<placeDTO> list(SearchCriteria scri) throws Exception {
-		return dao.list(scri);
+	public List<placeDTO> list(placeDTO dto) throws Exception {
+		return dao.list(dto);
 	}
 }

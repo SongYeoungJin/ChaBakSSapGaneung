@@ -14,6 +14,7 @@ import com.spring.ex.Dto.SearchCriteria;
 import com.spring.ex.Dto.placeDTO;
 @Repository
 public class placeDAO implements placeDAOImpl {
+	
 	@Inject
 	private SqlSession sqlSession;
 	@Autowired
@@ -24,9 +25,12 @@ public class placeDAO implements placeDAOImpl {
 	}
 	
 	@Override
-	public List<placeDTO> list(SearchCriteria scri) throws Exception {
-		return sqlSession.selectList("placeMapper.list", scri);
+	public List<placeDTO> list(placeDTO dto) throws Exception {
+		return sqlSession.selectList("placeMapper.list", dto);
 	}
+
+
+
 }
 
 	

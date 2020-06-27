@@ -4,6 +4,8 @@ package com.spring.ex.Controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,7 +24,7 @@ import com.spring.ex.Service.placeService;
 @Controller
 public class MemberController {
 
-
+	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
 	@Autowired
 	IMemberService memSer;
 	
@@ -53,32 +55,25 @@ public class MemberController {
 	public String test1() {
 		return "place/abs";
 	}
-	@RequestMapping("ab")
+	@RequestMapping("aaa")
 	public String test12() {
-		return "place/ab";
+		return "place/aaa";
 	}
 
-	
+
 	// �쉶�썝媛��엯
-	@RequestMapping(value = "place", method = RequestMethod.POST)
+	@RequestMapping(value = "abs", method = RequestMethod.POST)
 	public String place(HttpServletRequest request, HttpServletResponse response, Model model, placeDTO dto)
 			throws Exception {
 		response.setContentType("text/html; charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		plSer.userInsert(dto);
-		return "place/place";
+		logger.info("list");
+		model.addAttribute("list", plSer.list(dto));
+		return "place/abs";
 	}
 	
-	// 게시판 목록 조회
-		@RequestMapping(value = "place2", method = RequestMethod.GET)
-		public String list(Model model, @ModelAttribute("scri") SearchCriteria scri) throws Exception{
-	
-			model.addAttribute("place", plSer.list(scri));
-	
-			
-			return  "place/place2";
-		}
 		
 	@RequestMapping(value = "admin_registerPlace", method = RequestMethod.GET)
 	public String admin_registerPlace(HttpServletRequest request, HttpServletResponse response, Model model)throws Exception
@@ -88,6 +83,11 @@ public class MemberController {
 	        response.setCharacterEncoding("UTF-8");
 		return "place/admin_registerPlace";
 	}
+
+
+
+
+
 
 	
 }

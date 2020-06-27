@@ -31,17 +31,7 @@
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=01f7615ee8d025a981b28bb6241ff9f0"></script>
 
-    <%
-    // 인코딩
-    request.setCharacterEncoding("UTF-8");
-   String name = request.getParameter("p_name");
-   out.print(name);
-%>
-
- <p>이름 : <%=name %>
-  <p>위도 : <%=request.getParameter("p_lat")%></p>
-  <p>경도 : <%=request.getParameter("p_lng")%></p>
-
+ 
 	<script>
 		var container = document.getElementById('map');
 		var options = {
@@ -110,7 +100,7 @@
 			    {
 			    	   content : '<div class="customoverlay_main">' +
 				        '  <a  href="Review">' +
-				        '    <span style="color:purple"> <%=name %></span>' +
+				        '    <span style="color:blue"><%=request.getParameter("name")%></span>' +
 				        '  </a>' +
 				        '</div>',   
 			        title: "<%=request.getParameter("name")%>",

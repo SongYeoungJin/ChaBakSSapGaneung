@@ -1,20 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
-
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
 <html>
 <head>
-<!doctype html>
 <html class="no-js" lang="">
 <head>
-  
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>장소등록</title>
 <meta name="description" content="Ela Admin - HTML5 Admin Template">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
 <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
 <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
 
@@ -32,7 +28,6 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
 <link rel="stylesheet" href="./resources/assets/css/cs-skin-elastic.css">
 <link rel="stylesheet" href="./resources/assets/css/style.css">
-
 
 
 <style>
@@ -187,15 +182,10 @@
 	
 	
 	
-
-	<!-- ----------content------------ -->
-
-
-<div id="place">
-
-
-<form action="${pageContext.request.contextPath}/place" method="post" accept-charset="UTF-8">
-
+	
+	
+<form action="${pageContext.request.contextPath}/abs" method="post" accept-charset="UTF-8">
+<div id="clickLatlng"></div>
 <label>이름 :</label>
 <input type = "text" name = p_name id="p_name" /><br>
 <label>위도 :</label>
@@ -203,45 +193,41 @@
 <label>경도 :</label> 
 <input type = "text" name = p_lng id="p_lng"/>
 <input type="submit" value="등록하기" />
-
 </form>
-</div>
+
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=01f7615ee8d025a981b28bb6241ff9f0"></script>
 <script>
-
 var container = document.getElementById('map');
 var options = {
 		center: new kakao.maps.LatLng(36.333276, 127.402207),
 	level: 13
 };
 var map = new kakao.maps.Map(container, options);
-
-//지도를 클릭한 위치에 표출할 마커입니다
+// 지도를 클릭한 위치에 표출할 마커입니다
 var marker = new kakao.maps.Marker({ 
- // 지도 중심좌표에 마커를 생성합니다 
- position: map.getCenter() 
+    // 지도 중심좌표에 마커를 생성합니다 
+    position: map.getCenter() 
 }); 
-//지도에 마커를 표시합니다
+// 지도에 마커를 표시합니다
 marker.setMap(map);
 
-//지도에 클릭 이벤트를 등록합니다
-//지도를 클릭하면 마지막 파라미터로 넘어온 함수를 호출합니다
+// 지도에 클릭 이벤트를 등록합니다
+// 지도를 클릭하면 마지막 파라미터로 넘어온 함수를 호출합니다
 kakao.maps.event.addListener(map, 'click', function(mouseEvent) {        
- 
- // 클릭한 위도, 경도 정보를 가져옵니다 
- var latlng = mouseEvent.latLng; 
- 
- // 마커 위치를 클릭한 위치로 옮깁니다
- marker.setPosition(latlng);
- 
- var message = '클릭한 장소의 위도는 ' + latlng.getLat() + ' 이고, ';
- message += '경도는 ' + latlng.getLng() + ' 입니다';
- 
- var resultDiv = document.getElementById('clickLatlng'); 
- resultDiv.innerHTML = message;
+    
+    // 클릭한 위도, 경도 정보를 가져옵니다 
+    var latlng = mouseEvent.latLng; 
+    
+    // 마커 위치를 클릭한 위치로 옮깁니다
+    marker.setPosition(latlng);
+    
+    var message = '클릭한 위치의 위도는 ' + latlng.getLat() + ' 이고, ';
+    message += '경도는 ' + latlng.getLng() + ' 입니다';
+    
+    var resultDiv = document.getElementById('clickLatlng'); 
+    resultDiv.innerHTML = message;
+    
 });
-
-
 </script>
 
 
@@ -260,26 +246,7 @@ kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
 
 
 <!-- ---------------------------------Footer---------------------------- -->
-	<!-- 			
-		<div class="clearfix"></div>
-		Footer
-		<footer class="site-footer">
-			<div class="footer-inner bg-white">
-				<div class="row">
-					<div class="col-sm-6">Copyright &copy;Design by</div>
-					<div class="col-sm-6 text-right">
-						차박
-					</div>
-				</div>
-			</div>
-		</footer>
-	/.site-footer
-	</div>
-	/#right-panel
-	
-	 -->
-	
-	
+
 
 
 	<!-- Scripts -->
@@ -292,6 +259,7 @@ kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
 	<script
 		src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
 	<script src="./resources/assets/js/main.js"></script>
+	
 
 
 </body>

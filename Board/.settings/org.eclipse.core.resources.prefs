@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
 encoding//src/main/java/com/spring/ex/Controller/MemberController.java=UTF-8
 encoding//src/main/java/com/spring/ex/Controller/RController.java=UTF-8
+encoding//src/main/java/com/spring/ex/Dao/MemberDao.java=UTF-8
 encoding//src/main/webapp/WEB-INF/views/place/ab.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/place/place.jsp=UTF-8
