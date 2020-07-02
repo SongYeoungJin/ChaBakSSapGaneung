@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- [DB연결 사용법] 1. SQL문 작성 하고 다음과 같은 양식으로 만들어준다. -->
+
+<mapper namespace="adminMapper">
+
+<select id="aList" resultType="AdminMemberDto">
+		select * from admin
+	</select>
+
+
+<!-- 아이디 패스워드 -->
+	<select id="alogin" parameterType="AdminMemberDto"
+		resultType="adminDto">
+		SELECT * FROM admin WHERE a_id=#{a_id} AND a_pw=#{a_pw}
+	</select>
+	
+	
+</mapper>
