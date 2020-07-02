@@ -14,6 +14,8 @@
 	</head>
 	<script type="text/javascript">
 		$(document).ready(function(){
+			//$('#title').val('${update.cb_title}');
+			
 			var formObj = $("form[name='updateForm']");
 			
 			$(".cancel_btn").on("click", function(){
@@ -61,7 +63,7 @@
 			
 			<section id="container">
 				<form name="updateForm" role="form" method="post" action="/ex/board/update">
-					<input type="hidden" name="num" value="${update.cb_num}" readonly="readonly"/>
+					<input type="hidden" name="num" value="${update.cb_num}" readonly="readonly"></input>
 					<input type="hidden" id="page" name="page" value="${scri.page}"> 
 					<input type="hidden" id="perPageNum" name="perPageNum" value="${scri.perPageNum}"> 
 					<input type="hidden" id="searchType" name="searchType" value="${scri.searchType}"> 
@@ -70,7 +72,9 @@
 						<tbody>
 							<tr>
 								<td>
-									<label for="title">제목</label><input type="text" id="title" name="title" value="${update.cb_title}" class="chk" title="제목을 입력하세요."/>
+									<label for="title">제목</label><input type="text" id="title" name="title" value="${update.cb_title}" class="chk" title="제목을 입력하세요."></input>
+									<script>document.getElementById('title').innerText = '${update.cb_title}'</script>
+
 								</td>
 							</tr>	
 							<tr>

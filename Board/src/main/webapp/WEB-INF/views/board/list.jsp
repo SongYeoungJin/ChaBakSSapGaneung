@@ -1,28 +1,37 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ page language="java" 
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
-	<head>
-		<!-- 합쳐지고 최소화된 최신 CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-		<!-- 부가적인 테마 -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-		
-		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	 
-	 	<title>게시판</title>
-	</head>
-	<body>
+<head>
+<meta charset="UTF-8">
+<title>커뮤니티게시판</title>
+
+<%@ include file="../../include/header.jsp" %>
+
+</head>
+<body>
+<%@ include file="../../include/navigator.jsp" %>
+
+  <div class="container">
+  <!-- 
+  <div class="py-5 bg-image" style='background-color:#0000ff'>
+  -->
+    <div class="row">
+      <div class="col-lg-3">
+
+        <h2 class="my-5"></h2>
+        <div class="list-group">
+          <a class="list-group-item" href="ReviewList.do">리뷰목록</a>
+        </div>
+	  </div>
+    </div>
+    
 		<div class="container">
 			<header>
-				<h1> 게시판</h1>
+				<h1>리뷰목록</h1>
 			</header>
 			<hr />
 			 
-			<div>
-				<%@include file="navigator.jsp" %>
-			</div>
-			
 			<section id="container">
 				<form role="form" method="get">
 					<table class="table table-hover">
@@ -65,6 +74,13 @@
 								</span>
 							</div>
 						</div>
+						<div class="col-xs-10 col-sm-10">
+							<div class="input-group">
+								<span class="input-group-btn">
+									<button id="writeBtn" type="button" class="btn btn">글쓰기</button> 	
+								</span>
+							</div>
+						</div>
 						 
 						<script>
 							 $(function(){
@@ -93,5 +109,5 @@
 				</form>
 			</section>
 		</div>
-	</body>
+</body>
 </html>

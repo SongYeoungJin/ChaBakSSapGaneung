@@ -1,16 +1,10 @@
 package com.spring.ex.Dto;
 
 public class Admin_Dto {
-	private int a_num;
 	private String a_id;
 	private String a_pw;
 	private String a_name;
-	public int getA_num() {
-		return a_num;
-	}
-	public void setA_num(int a_num) {
-		this.a_num = a_num;
-	}
+	private String a_email;
 	public String getA_id() {
 		return a_id;
 	}
@@ -29,5 +23,12 @@ public class Admin_Dto {
 	public void setA_name(String a_name) {
 		this.a_name = a_name;
 	}
+	public String getA_email() {
+		return a_email;
+	}
+	public void setA_email(String a_email) {
+		this.a_email = a_email;
+	}
+	
 	
 }

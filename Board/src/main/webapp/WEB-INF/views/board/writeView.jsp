@@ -9,7 +9,9 @@
 	 	
 	 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	 	
-	 	<title>게시판</title>
+	 	<title>게시글 작성</title>
+	 	
+	 	<%@ include file="../../include/header.jsp" %>
 	</head>
 	<script type="text/javascript">
 		$(document).ready(function(){
@@ -34,7 +36,7 @@
 		}
 	</script>
 	<body>
-	
+		<%@ include file="../../include/navigator.jsp" %>
 		<div id="root">
 			<header>
 				<h1> 게시판</h1>
@@ -46,18 +48,18 @@
 			</div>
 			<hr />
 			
-			<section id="container">
+			<div id="container">
 				<form name="writeForm" method="post" action="/ex/board/write">
 					<table>
 						<tbody>
 							<tr>
 								<td>
-									<label for="title">제목</label><input type="text" id="title" name="title" class="chk" title="제목을 입력하세요."/>
+									<label for="title">제목</label><input type="text" id="title" name="title" class="chk" title="제목을 입력하세요.">${update.cb_title}</input>
 								</td>
 							</tr>	
 							<tr>
 								<td>
-									<label for="content">내용</label><textarea id="memo" name="memo" class="chk" title="내용을 입력하세요."></textarea>
+									<label for="content">내용</label><textarea id="memo" name="memo" class="chk" title="내용을 입력하세요.">${update.cb_memo}</textarea>
 								</td>
 							</tr>
 							<tr>
@@ -73,7 +75,7 @@
 					</table>
 				</form>
 				
-			</section>
+			</div>
 			<hr />
 		</div>
 	</body>
