@@ -1,66 +1,38 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE HTML>
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
+
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>ChaBak</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description"
-	content="Free HTML5 Website Template by gettemplates.co" />
-<meta name="keywords"
-	content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-<meta name="author" content="gettemplates.co" />
-
-<!-- Facebook and Twitter integration -->
-<meta property="og:title" content="" />
-<meta property="og:image" content="" />
-<meta property="og:url" content="" />
-<meta property="og:site_name" content="" />
-<meta property="og:description" content="" />
-<meta name="twitter:title" content="" />
-<meta name="twitter:image" content="" />
-<meta name="twitter:url" content="" />
-<meta name="twitter:card" content="" />
-
-
+<meta charset="UTF-8">
 	
-	
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i" rel="stylesheet">
-<!-- Animate.css -->
-<link rel="stylesheet"
-	href="<c:url value='./resources/shopBootstrap/css/animate.css'/>">
-<!-- Icomoon Icon Fonts-->
-<link rel="stylesheet"
-	href="<c:url value='./resources/shopBootstrap/css/icomoon.css'/>">
-<!-- Bootstrap  -->
-<link rel="stylesheet"
-	href="<c:url value='./resources/shopBootstrap/css/bootstrap.css'/>">
+ 	<!-- Bootstrap core JavaScript -->
+  	<script src="vendor/jquery/jquery.min.js"></script>
+  	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  
+  	<!-- Bootstrap core CSS -->
+  	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Flexslider  -->
-<link rel="stylesheet"
-	href="<c:url value='./resources/shopBootstrap/css/flexslider.css'/>">
+  	<!-- Custom styles for this template -->
+  	<link href="css/shop-homepage.css" rel="stylesheet">
 
-<!-- Owl Carousel  -->
-<link rel="stylesheet"
-	href="<c:url value='./resources/shopBootstrap/css/owl.carousel.min.css'/>">
-<link rel="stylesheet"
-	href="<c:url value='./resources/shopBootstrap/css/owl.theme.default.min.css'/>">
+	<!-- CSS only -->
+	<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	crossorigin="anonymous">
 
-<!-- Theme style  -->
-<link rel="stylesheet"
-	href="<c:url value='./resources/shopBootstrap/css/style.css'/>">
-
-<!-- Modernizr JS -->
-<script src="<c:url value='./resources/shopBootstrap/js/modernizr-2.6.2.min.js'/>"></script>
-<!-- FOR IE9 below -->
-<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
-
-
-
-
+	<!-- JS, Popper.js, and jQuery -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+	integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+	crossorigin="anonymous"></script>
+	<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+	integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+	crossorigin="anonymous"></script>
+	<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+	integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+	crossorigin="anonymous"></script>

@@ -7,7 +7,7 @@
 				<div class="row">
 					<div class="col-md-3 col-xs-2">
 						<div id="fh5co-logo">
-							<a href="main.do"><img src="resources/Picture/logo.png" alt=""
+							<a href="../main.do"><img src="resources/Picture/logo.png" alt=""
 							 style="width: 80px; height: 50px";>CHABAK</a>
 						</div>
 					</div>

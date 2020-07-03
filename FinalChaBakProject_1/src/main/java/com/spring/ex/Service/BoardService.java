@@ -35,7 +35,7 @@ public interface BoardService {
      * @param boardVO
      * @throws Exception
      */
-    public void deleteBoard(Community_Board_Dto boardVO) throws Exception;
+    public void deleteBoard(Community_Board_Dto boardVO)  throws Exception;
  
     /**
      * 게시글 조회

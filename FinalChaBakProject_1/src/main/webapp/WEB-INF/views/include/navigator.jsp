@@ -1,47 +1,69 @@
-==<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="main.do">ChaBak</a>
-      <button class="navbar-toggler" aria-expanded="false" aria-controls="navbarResponsive" aria-label="Toggle navigation" type="button" data-target="#navbarResponsive" data-toggle="collapse">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-      <div class="menubar">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link"  id="current" href="ChaBak">차박의묘미</a>
- 				<ul>
- 					<li><a href="ChaBak"style="color: white">차박소개</a></li>
- 					<li><a href="place"style="color: white">차박추천장소</a></li>
- 				</ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" id="current"  href="ReviewList">차박커뮤니티</a>
-            	<ul>
- 					<li><a href="list2" style="color: white">자유게시판</a></li>
- 					<li><a href="ReviewList" style="color: white">장소후기게시판</a></li>
- 				</ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="productList" >차박용품</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="myPage">My차박
-            	 <span class="sr-only">(current)</span>
-            </a>
-          </li>
-           <li class="nav-item">
-            <a class="nav-link" href="login">Login</a>
-          </li>
-        </ul>
-        </div>
-      </div>
-    </div>
-  </nav><br><br><br><br>
-  <style>
-  .menubar li ul { background: rgb(109,109,109); display:none; /* 평상시에는 서브메뉴가 안보이게 하기 */ 
-  height:auto; padding:0px; margin:0px; border:0px; position:absolute; width:200px; z-index:200; }
-.menubar li:hover ul { display:block; /* 마우스 커서 올리면 서브메뉴 보이게 하기 */ }
-  </style>
+<nav class="fh5co-nav" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-xs-2">
+						<div id="fh5co-logo">
+							<a href="../main.do"><img src="resources/Picture/logo.png" alt=""
+							 style="width: 80px; height: 50px";>CHABAK</a>
+						</div>
+					</div>
+					<div class="col-md-6 col-xs-6 text-center menu-1">
+						<ul>
+							<li class="has-dropdown"><a href="ChaBak">차박의 묘미</a>
+								<ul class="dropdown">
+									<li><a href="ChaBak">차박소개</a></li>
+									<li><a href="place">차박추천장소</a></li>
+								</ul></li>
+							<li class="has-dropdown"><a href="board/boardList.do" id="current">차박커뮤니티</a>
+							<ul class="dropdown">
+									<li><a href="board/boardList.do">자유게시판</a></li>
+									<li><a href="ReviewList">장소후기게시판</a></li>
+								</ul></li>
+							
+							<li class="has-dropdown"><a href="marketList.do">차박용품</a>
+								<!-- 
+								<ul class="dropdown">
+									<li><a href="productList1">캠핑용품</a></li>
+								</ul>
+								-->
+							</li>
+						
+					<c:if test="${sessionScope.login_result != null}">
+						<li><a href="myPage">${login_result.m_name}님
+								차박 <span class="sr-only">(current)</span>
+						</a></li>
+						<li><span> 
+						<a href="${pageContext.request.contextPath}/member_logout.ing">Logout</a></span></li>
+					</c:if>
+
+					<c:if test="${sessionScope.login_result == null}">
+						<li><a href="login.do">Login</a></li>
+					</c:if>
+
+
+				</ul>
+					</div>
+					<div class="col-md-3 col-xs-4 text-right hidden-xs menu-2">
+						<ul>
+							<li class="search">
+								<div class="input-group">
+									<input type="text" placeholder="Search.."> <span class="input-group-btn">
+										<button class="btn btn-primary" type="button">
+											<i class="icon-search"></i>
+										</button>
+									</span>
+								</div>
+							</li>
+					<li class="shopping-cart"><a href="myCart" class="cart"><span><small>0</small>
+					<i class="icon-shopping-cart"></i></span></a></li>
+
+				</ul>
+					</div>
+				</div>
+
+			</div>
+		</nav>
