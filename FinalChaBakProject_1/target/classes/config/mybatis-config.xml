@@ -6,6 +6,7 @@
 	<typeAliases>
 		<typeAlias type="com.spring.ex.Dto.MemberDto" alias="MemberDto"></typeAlias>
 		<typeAlias type="com.spring.ex.Dto.placeDTO" alias="placeDTO"></typeAlias>
+		<typeAlias type="com.spring.ex.Dto.AdminMemberDto" alias="AdminMemberDto"></typeAlias>
 	</typeAliases>
 	
 	
