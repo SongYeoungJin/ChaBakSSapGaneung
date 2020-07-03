@@ -5,6 +5,7 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="com.spring.ex.Dto.MemberDto" alias="MemberDto"></typeAlias>
+		<typeAlias type="com.spring.ex.Dto.placeDTO" alias="placeDTO"></typeAlias>
 		<typeAlias type="com.spring.ex.Dto.AdminMemberDto" alias="AdminMemberDto"></typeAlias>
 	</typeAliases>
 	
@@ -12,5 +13,6 @@
 	<mappers>
 		<mapper resource="mappers/memberMapper.xml" />
 		<mapper resource="mappers/boardMapper.xml"/>
+		<mapper resource="mappers/placeMapper.xml" />
 	</mappers>
 </configuration>

@@ -30,4 +30,14 @@
 		SET m_point=#{m_point}
 		WHERE m_id=#{m_id}
 	</update>
+	<!-- 아이디 찾기 -->
+	<select id="find_id"  parameterType="MemberDto"
+		resultType="MemberDto">
+		select m_id from member where m_email = #{m_email}
+	</select>
+<!-- 비밀번호 찾기 -->
+	<select id="find_pw"  parameterType="MemberDto"
+		resultType="MemberDto">
+		select m_pw from member where m_id = #{m_id}
+	</select>
 </mapper>

@@ -87,4 +87,67 @@ public class MemberController {
 			session.invalidate();
 			return "redirect:/main.do";
 		}
+		
+		
+		//아이디 찾기 폼
+		@RequestMapping(value = "/find_ID", method = RequestMethod.GET)
+		public String find_Id() {
+			
+			return "Login/find_ID";
+		}
+		// 아이디 찾기
+		@RequestMapping("/id")
+		public String find_ID(HttpServletRequest request, Model model, HttpServletResponse response, MemberDto memdto) {
+
+			response.setContentType("text/html; charset=UTF-8");
+
+			System.out.println("member_find_id.ing()");
+			System.out.println("dto의email:" + memdto.getM_email());
+
+			MemberDto ID = memSer.find_id(memdto);
+
+			System.out.println(ID);
+
+			if (ID != null) {
+				HttpSession session = request.getSession();
+
+				session.setAttribute("login_result", ID);
+
+				System.out.println(ID.getM_id());
+				System.out.println(ID.getM_pw());
+			}
+
+			return "Login/id";
+		}
+		//비밀번호 찾기 폼
+		@RequestMapping(value = "/find_PW", method = RequestMethod.GET)
+		public String find_PW() {
+			
+			return "Login/find_PW";
+		}
+		//비밀번호 찾기
+		@RequestMapping("/pw")
+		public String find_PW(HttpServletRequest request, Model model, HttpServletResponse response, MemberDto memdto) {
+
+			response.setContentType("text/html; charset=UTF-8");
+
+			System.out.println("member_find_pw");
+			System.out.println("dto의id:" + memdto.getM_id());
+
+			MemberDto PW = memSer.find_pw(memdto);
+
+			System.out.println(PW);
+
+			if (PW != null) {
+				HttpSession session = request.getSession();
+
+				session.setAttribute("login_result", PW);
+
+				System.out.println(PW.getM_id());
+				System.out.println(PW.getM_pw());
+			}
+
+			return "Login/pw";
+		}
+		
 }

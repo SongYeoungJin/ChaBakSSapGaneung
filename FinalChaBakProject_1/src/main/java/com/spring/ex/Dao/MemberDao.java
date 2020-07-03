@@ -48,5 +48,14 @@ public class MemberDao implements MemberIDao{
 	}
 	
 	
-	
+	@Override
+	public MemberDto find_id(MemberDto memdto) {
+		return mybatis.selectOne("memberMapper.find_id", memdto);
+	}
+
+	@Override
+	public MemberDto find_pw(MemberDto memdto) {
+		return mybatis.selectOne("memberMapper.find_pw", memdto);
+	}
+
 }

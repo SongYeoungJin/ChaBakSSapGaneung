@@ -16,7 +16,7 @@
 							<li class="has-dropdown"><a href="ChaBak">차박의 묘미</a>
 								<ul class="dropdown">
 									<li><a href="ChaBak">차박소개</a></li>
-									<li><a href="place">차박추천장소</a></li>
+									<li><a href="chabakplace">차박추천장소</a></li>
 								</ul></li>
 							<li class="has-dropdown"><a href="board/boardList.do" id="current">차박커뮤니티</a>
 							<ul class="dropdown">
