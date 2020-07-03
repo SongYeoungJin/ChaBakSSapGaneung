@@ -49,28 +49,20 @@
   </head>
 
 
-
 <body class="bg-dark">
 		<div class="container">
 			<div class="card card-login mx-auto mt-5">
-				<div class="card-header">ID찾기</div>
+				<div class="card-header">PW찾기</div>
 				<div class="card-body">
 				
-					<form action="id" method="post">
-						<div class="form-group">
-							<div class="form-label-group">
-								<label for="inputEmail">Email</label>
-								
-								<input class="form-control" autofocus="autofocus"
-									required="required" name = "m_email" placeholder="이메일를 입력하세요">
-							</div>
-						</div>
-						<div class="form-group">
-							
-						</div>
-						
-						<button type = "submit" class = "btn btn-primary btn-block">찾기</button>
-					</form>
+					<c:if test="${sessionScope.login_result != null}">
+		회원님의 비밀번호 는  ${login_result.m_pw} 입니다
+		<li><a href="login.do">로그인</a></li>
+	
+</c:if>
+<c:if test="${sessionScope.login_result == null}">
+	<li><a href="login.do">로그인</a></li>
+</c:if>
 					
 				</div>
 

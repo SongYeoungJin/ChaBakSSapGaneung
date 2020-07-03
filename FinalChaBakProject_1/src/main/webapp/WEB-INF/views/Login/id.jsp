@@ -1,3 +1,5 @@
+
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -56,24 +58,19 @@
 				<div class="card-header">ID찾기</div>
 				<div class="card-body">
 				
-					<form action="id" method="post">
-						<div class="form-group">
-							<div class="form-label-group">
-								<label for="inputEmail">Email</label>
-								
-								<input class="form-control" autofocus="autofocus"
-									required="required" name = "m_email" placeholder="이메일를 입력하세요">
-							</div>
-						</div>
-						<div class="form-group">
-							
-						</div>
+	<c:if test="${sessionScope.login_result != null}">
+		회원님의 아이디 는	${login_result.m_id} 입니다.
+		<br>
+		<li><a href="login.do">로그인</a></li>
+		<li><a href="find_PW">비밀번호찾기</a></li>
 						
-						<button type = "submit" class = "btn btn-primary btn-block">찾기</button>
-					</form>
-					
-				</div>
-
+</c:if>
+<c:if test="${sessionScope.login_result == null}">
+	해당되는 아이디가 없거나 찾을수 없습니다.
+	다시 입력하세요.
+	<li><a href="find_ID">ID찾기</a></li>
+</c:if>
+</div>
 			</div>
 		</div>
 

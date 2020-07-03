@@ -8,5 +8,6 @@ public interface MemberIDao {
 	public int memberUpdate(MemberDto memdto);
 	public int pointUpdate(MemberDto memdto);
 	public void register(MemberDto dto) throws Exception;
-	
+	public MemberDto find_id(MemberDto memdto);
+	public MemberDto find_pw(MemberDto memdto);
 }

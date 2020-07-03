@@ -36,4 +36,13 @@ public class MemberService implements IMemberService {
 	public void register(MemberDto dto) throws Exception {
 		dao.register(dto);
 	}
+	@Override
+	public MemberDto find_id (MemberDto memdto) {
+		return dao.find_id(memdto);
+	}
+	@Override
+	public MemberDto find_pw (MemberDto memdto) {
+		return dao.find_pw(memdto);
+	}
+	
 }
