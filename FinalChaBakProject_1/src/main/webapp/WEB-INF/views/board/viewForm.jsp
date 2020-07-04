@@ -36,44 +36,33 @@
                     <a href='#' onClick='fn_cancel()'>목록</a>
                     <a href='#' onClick='fn_relay()'>답변</a>                    
                 </div>
-            </div>
         </div>
     </form>
 <script>
+
 //목록
 function fn_cancel(){
     
     var form = document.getElementById("viewForm");
     form.action = "<c:url value='/board/boardList.do'/>";
     form.submit();
-    
 }
  
- 
 //수정
-function fn_update(){
-    
+function fn_update(){  
     var form = document.getElementById("viewForm");
     form.action = "<c:url value='/board/updateboard.do'/>";
     form.submit();
 }
 
 //삭제
-function fn_delete(){
-    
+function fn_delete(){   
     var form = document.getElementById("viewForm");
     form.action = "<c:url value='/board/deleteboard.do'/>";
     form.submit();
 }
  
-//답변
-function fn_relay(){
-    
-    var form = document.getElementById("viewForm");
-    form.action = "<c:url value='/board/relayForm.do'/>";
-    form.submit();
-    
-}
+
 </script>
 </div>
 </body>

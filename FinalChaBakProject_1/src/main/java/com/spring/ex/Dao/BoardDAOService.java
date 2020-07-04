@@ -46,4 +46,6 @@ public class BoardDAOService implements BoardDAO{
         BoardMapper mapper = sqlSession.getMapper(BoardMapper.class);
         return mapper.selectBoardByCode(boardVO);
     }
+    
+
 }

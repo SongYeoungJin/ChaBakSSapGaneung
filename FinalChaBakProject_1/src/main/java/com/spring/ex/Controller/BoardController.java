@@ -85,7 +85,7 @@ public class BoardController {
         Community_Board_Dto resultVO = boardServiceImpl.selectBoardByCode(boardVO);
         
         model.addAttribute("result", resultVO);
-        
+
         return "board/viewForm";
     }
     
@@ -152,4 +152,6 @@ public class BoardController {
         return result;
        }
        */
+    
+    
 }

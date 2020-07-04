@@ -43,5 +43,7 @@ public interface BoardDAO {
      * @throws Exception
      */
     Community_Board_Dto selectBoardByCode(Community_Board_Dto boardVO) throws Exception;
+    
+    
  
 }
