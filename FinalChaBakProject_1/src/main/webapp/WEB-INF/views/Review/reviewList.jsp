@@ -16,7 +16,7 @@
 <body>
 <%@ include file="../../include/navigator.jsp" %>
 
-<div>
+<div class="container">
 	<form id="reviewForm" name="reviewForm" method="post">
 		<table border="1" class="table table-striped table-bordered table-hover">
             <thead>
@@ -41,7 +41,7 @@
             </tbody>
         </table>
         <div>            
-            <a href='reviewWrite' onClick='fn_write()' class='btn'>글쓰기</a>   
+            <a href='#' onClick='fn_write()' class='btn'>글쓰기</a>   
             <a href="#" onClick="fn_delete(1)" class='btn'>삭제</a> <!-- 삭제할 항목 넣어줘야함 . -->
         </div>
 	</form>

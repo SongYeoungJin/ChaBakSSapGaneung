@@ -57,8 +57,8 @@ public class ReviewController {
     public String viewForm(@ModelAttribute("boardVO") ReviewDto boardVO, Model model, HttpServletRequest request) throws Exception{
         
     	request.setCharacterEncoding("UTF-8");
-        int cb_num = Integer.parseInt(request.getParameter("cb_num"));
-        boardVO.setRb_num(cb_num);
+        int rb_num = Integer.parseInt(request.getParameter("rb_num"));
+        boardVO.setRb_num(rb_num);
         
         ReviewDto resultVO = reviewServiceImpl.selectBoardByCode(boardVO);
         
