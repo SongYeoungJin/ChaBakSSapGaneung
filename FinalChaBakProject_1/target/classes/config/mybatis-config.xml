@@ -14,5 +14,6 @@
 		<mapper resource="mappers/memberMapper.xml" />
 		<mapper resource="mappers/boardMapper.xml"/>
 		<mapper resource="mappers/placeMapper.xml" />
+		<mapper resource="mappers/reviewMapper.xml"/>
 	</mappers>
 </configuration>

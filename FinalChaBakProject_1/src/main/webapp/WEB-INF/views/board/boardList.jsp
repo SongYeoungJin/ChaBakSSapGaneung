@@ -39,8 +39,8 @@
             </tbody>
         </table>
         <div>            
-            <a href='#' onClick='fn_write()'>글쓰기</a>   
-            <a href="#" onClick="fn_delete(1)">삭제</a> <!-- 삭제할 항목 넣어줘야함 . -->
+            <a href='#' onClick='fn_write()' class='btn'>글쓰기</a>   
+            <a href="#" onClick="fn_delete(1)" class='btn'>삭제</a> <!-- 삭제할 항목 넣어줘야함 . -->
         </div>
     </form>
     <form id="selectFilter" name="selectFilter" method="post">

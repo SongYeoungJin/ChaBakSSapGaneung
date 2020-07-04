@@ -113,6 +113,7 @@ public class RController {
 	    response.setCharacterEncoding("UTF-8");
 		return "Review/ReviewList";
 	}
+	
 	@RequestMapping(value = "admin_registerPlace", method = RequestMethod.GET)
 	public String admin_registerPlace(HttpServletRequest request, HttpServletResponse response, Model model)throws Exception
 	{
@@ -122,5 +123,12 @@ public class RController {
 		return "admin/admin_registerPlace";
 	}
 	
-	
+	@RequestMapping(value = "myAccount.do", method = RequestMethod.GET)
+	public String myAccount(HttpServletRequest request, HttpServletResponse response, Model model)throws Exception
+	{
+		response.setContentType("text/html; charset=UTF-8");
+	      request.setCharacterEncoding("UTF-8");
+	        response.setCharacterEncoding("UTF-8");
+		return "account/MyAccount";
+	}
 }
