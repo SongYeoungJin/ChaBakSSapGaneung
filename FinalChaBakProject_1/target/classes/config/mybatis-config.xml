@@ -18,5 +18,6 @@
 		<mapper resource="mappers/placeMapper.xml" />
 		<mapper resource="mappers/reviewMapper.xml"/>
 		<mapper resource="mappers/marketMapper.xml"/>
+		<mapper resource="mappers/cartMapper.xml"/>
 	</mappers>
 </configuration>

@@ -14,7 +14,8 @@ import com.spring.ex.mapper.MarketMapper;
 
 @Service("marketDAOService")
 public class MarketDAOService implements MarketDAO{
-	 
+	private static String namespace = "com.spring.ex.mappers.marketMapper"; 
+	
     @Autowired
     private SqlSession sqlSession;
     
@@ -54,6 +55,7 @@ public class MarketDAOService implements MarketDAO{
 	public void addCart(CartDto cart) throws Exception {
 		MarketMapper mapper = sqlSession.getMapper(MarketMapper.class);
 		mapper.insert(cart);
+		//sqlSession.insert(namespace + ".addCart", cart);
 	}
 
 	@Override

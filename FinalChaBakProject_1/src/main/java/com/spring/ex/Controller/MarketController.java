@@ -141,11 +141,13 @@ public class MarketController {
         
         return "redirect:/market/marketList.do";
     }
+   
     
     /**
      * 카트 담기 (Ajax)
      * @return 
      */
+    /*
     @ResponseBody
     @RequestMapping(value = "/view/addCart", method = RequestMethod.POST)
     public int addCart(CartDto cart, HttpSession session) throws Exception {
@@ -159,10 +161,10 @@ public class MarketController {
 		}
 		return result;
 	}
-    /*
+    
     // 카트 목록
     @RequestMapping(value = "/cartList", method = RequestMethod.GET)
-	public void getCartList(HttpSession session, Model model) throws Exception {
+	public String getCartList(HttpSession session, Model model) throws Exception {
 		//logger.info("get cart list");
 
 		MemberDto member = (MemberDto) session.getAttribute("member");
@@ -171,6 +173,8 @@ public class MarketController {
 		List<CartListDto> cartList = marketServiceImpl.cartList(m_id);
 
 		model.addAttribute("cartList", cartList);
+		
+		return "cart/CartList";
     }
     */
     

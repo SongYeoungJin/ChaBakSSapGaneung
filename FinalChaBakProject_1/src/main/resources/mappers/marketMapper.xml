@@ -52,7 +52,7 @@
 
 	<!-- 카트 담기 -->
 	<insert id="addCart">
-		insert into tbl_cart (cartNum, m_id, mar_num, cartCount)
+		insert into cart_2 (cartNum, m_id, mar_num, cartCount)
 		values (#{cartNum}, #{m_id}, #{mar_num}, #{cartCount})
 	</insert>
 
@@ -62,7 +62,7 @@
 		row_number() over(order by c.cartNum desc) as num,
 		c.cartNum, c.m_id, c.mar_num, c.cartCount, c.addDate,
 		m.mar_name, m.mar_price, m.mar_ThumbImg
-		from cart c
+		from cart_2 c
 		inner join market m
 		on c.mar_num = m.mar_num
 		where c.m_id = #{m_id}

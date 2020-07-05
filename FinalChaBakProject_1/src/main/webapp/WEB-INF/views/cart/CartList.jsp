@@ -1,6 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<% request.setCharacterEncoding("UTF-8"); %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta charset="EUC-KR">
@@ -37,16 +42,16 @@
 					</div>
 					<div class="gdsInfo">
 						<p>
-							<span>»óÇ°¸í : </span>${cartList.mar_name}<br /> 
-							<span>°³´ç °¡°İ: </span>
+							<span>ìƒí’ˆëª… : </span>${cartList.mar_name}<br /> 
+							<span>ê°œë‹¹ ê°€ê²©: </span>
 							<fmt:formatNumber pattern="###,###,###" value="${cartList.mar_price}" /><br /> 
-							<span>±¸ÀÔ ¼ö·® : </span>${cartList.cartCount} °³<br /> 
-							<span>ÃÖÁ¾°¡°İ : </span>
+							<span>êµ¬ì… ìˆ˜ëŸ‰ : </span>${cartList.cartCount} ê°œ<br /> 
+							<span>ìµœì¢…ê°€ê²© : </span>
 							<fmt:formatNumber pattern="###,###,###" value="${cartList.mar_price * cartList.cartCount}" />
 						</p>
 						
 						<div class="delete">
-							<button type="button" class="delete-btn">»èÁ¦</button>
+							<button type="button" class="delete-btn">ì‚­ì œ</button>
 						</div>
 					</div>
 				</li>
