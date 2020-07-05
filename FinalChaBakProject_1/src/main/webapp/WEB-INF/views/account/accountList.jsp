@@ -15,12 +15,14 @@
 		<td>주문내역</td>
 		<td>주문번호</td>
 		<td>주문일시</td>
+		<td>주문가격</td>
 		<td>삭제</td>
 	</tr>
 	<tr>
-		<td><a href="product.do" name="product">A-텐트</a>
-		<td><a href="product.do" name="productNum">1</a></td>
-		<td><a href="product.do" name="productDate">2020-06-09</td>
+		<td><a href="product.do" name="product" value=""></a>
+		<td><a href="product.do" name="productNum" value=""></a></td>
+		<td><a href="product.do" name="productDate" value=""></td>
+		<td><a href="product.do" name="productPrice" value=""></a></td>
 		<td><button class="btn btn-secondary" name="deleteProduct">삭제</button></td>
 	</tr>
 </table>

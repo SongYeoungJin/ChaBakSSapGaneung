@@ -39,7 +39,7 @@
 
 	<bean id="MapperScannerConfigurer"
 		class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.spring.ex.service.IMemberService" />
+		<property name="basePackage" value="com.spring.ex.Service.IMemberService" />
 	</bean>
 	
 		

@@ -15,5 +15,6 @@
 		<mapper resource="mappers/boardMapper.xml"/>
 		<mapper resource="mappers/placeMapper.xml" />
 		<mapper resource="mappers/reviewMapper.xml"/>
+		<mapper resource="mappers/marketMapper.xml"/>
 	</mappers>
 </configuration>

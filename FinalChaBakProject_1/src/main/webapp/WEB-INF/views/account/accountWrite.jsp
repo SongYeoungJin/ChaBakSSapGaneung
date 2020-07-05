@@ -32,14 +32,19 @@
 <input type="text" id="sample6_extraAddress" placeholder="참고항목"> <br>
 전화번호 <input type="text" name="phone1" style="width:50px;"> - <input type="text" name="phone2"style="width:50px;"> - <input type="text" name="phone3"style="width:51px;"> <br><br>
 <hr>
+
 <h3>상품 정보</h3>
 <hr>
 이미지   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 수량 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;상품가격
 <br><br><br><br><br><br><br>
 <hr>
 <span style="color:red">총합:(가격)입니다.</span> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+
+
 <input type="button" id="button2" value="결제하기"  onClick="location.href='accountDetail'"/>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 <input type="button" id="button3" value="뒤로가기"  onClick="history.go(-1)" />
+
+
 <!-- Bootstrap core JavaScript -->
   	<script src="vendor/jquery/jquery.min.js"></script>
   	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
