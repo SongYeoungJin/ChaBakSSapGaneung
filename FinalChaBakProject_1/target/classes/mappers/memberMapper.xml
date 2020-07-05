@@ -7,10 +7,12 @@
 	<select id="mList" resultType="MemberDto">
 		select * from member
 	</select>
+	
 	<insert id="userInsert" parameterType="MemberDto">
 		INSERT INTO member(m_name,m_email,m_id,m_pw,m_address)
 		VALUES(#{m_name},#{m_email},#{m_id},#{m_pw},#{m_address})
 	</insert>
+	
 	<!-- 아이디 패스워드 -->
 	<select id="login" parameterType="MemberDto"
 		resultType="MemberDto">
@@ -30,14 +32,18 @@
 		SET m_point=#{m_point}
 		WHERE m_id=#{m_id}
 	</update>
+	
 	<!-- 아이디 찾기 -->
 	<select id="find_id"  parameterType="MemberDto"
 		resultType="MemberDto">
 		select m_id from member where m_email = #{m_email}
 	</select>
-<!-- 비밀번호 찾기 -->
+	
+	<!-- 비밀번호 찾기 -->
 	<select id="find_pw"  parameterType="MemberDto"
 		resultType="MemberDto">
 		select m_pw from member where m_id = #{m_id}
 	</select>
+	
+	
 </mapper>

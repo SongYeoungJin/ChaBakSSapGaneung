@@ -59,7 +59,6 @@ public class MarketServiceImpl implements MarketService{
 		public List<CartListDto> cartList(String m_id) throws Exception {
 			return marketDAOService.cartList(m_id);
 		}
-	    
 
-	 
+
 }

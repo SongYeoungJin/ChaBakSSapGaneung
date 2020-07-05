@@ -42,4 +42,6 @@ public interface MarketDAO {
      */
     
     public List<CartListDto> cartList(String m_id) throws Exception;
+    
+    
 }

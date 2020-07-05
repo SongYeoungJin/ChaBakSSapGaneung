@@ -22,14 +22,9 @@ body {
 	<%@ include file="../../include/navigator.jsp"%>
 
 
-		<form name="myInfo" action="member_modify.do" method="post">
-			<p>내 정보</p>
-			<!-- 이름 : <input type="text" name="user_name" value="차박쌉가능" readonly><br>
-이메일 : <input type="e-mail" name="user_email" readonly><br>
-my 포인트 : <input type="text" name="user_point" value="p" readonly><button>구매</button><br>
-아이디 : <input type="text" name="user_id" value="" readonly><br>
-<input type="submit" value="내정보수정"> 
--->
+<form name="myInfo" action="member_modify.do" method="post">
+<p>내 정보</p>
+			
 <div class="container">	
 	<table align="center" border='0' class="table table-striped table-bordered table-hover">
 		<tr>
@@ -60,7 +55,7 @@ my 포인트 : <input type="text" name="user_point" value="p" readonly><button>�
 
 		<div>
 			<input class="btn btn-secondary" type="submit" onClick="location.href='myInfoModify'" value="내 정보수정">
-			<input class="btn btn-secondary" type="submit" onClick="location.href='buypoint'" value="포인트 충천">
+			<input class="btn btn-secondary" type="submit" onClick="location.href='buypoint'" value="포인트 충전">
 		</div>
 
 

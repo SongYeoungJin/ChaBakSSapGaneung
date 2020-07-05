@@ -58,4 +58,5 @@ public class MemberDao implements MemberIDao{
 		return mybatis.selectOne("memberMapper.find_pw", memdto);
 	}
 
+
 }

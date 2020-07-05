@@ -23,5 +23,6 @@ public interface MarketMapper {
     
     // 카트담기
     public void insert(CartDto cart) throws Exception;
+    
 
 }

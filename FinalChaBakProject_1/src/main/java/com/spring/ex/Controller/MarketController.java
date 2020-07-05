@@ -159,7 +159,7 @@ public class MarketController {
 		}
 		return result;
 	}
-    
+    /*
     // 카트 목록
     @RequestMapping(value = "/cartList", method = RequestMethod.GET)
 	public void getCartList(HttpSession session, Model model) throws Exception {
@@ -171,5 +171,30 @@ public class MarketController {
 		List<CartListDto> cartList = marketServiceImpl.cartList(m_id);
 
 		model.addAttribute("cartList", cartList);
+    }
+    */
+    
+    @RequestMapping(value="/market/productList.do")
+    public String productList(@ModelAttribute("marketVO") MarketDto marketVO, Model model) throws Exception{
+                
+        List<MarketDto> list = marketServiceImpl.selectMarketList(marketVO);
+        
+        model.addAttribute("list", list);
+        
+        return "market/productList";
+    }
+    
+    @RequestMapping(value="/market/productDetail.do", method = RequestMethod.POST)
+    public String productDetail(@ModelAttribute("marketVO") MarketDto marketVO, Model model, HttpServletRequest request) throws Exception{
+        
+    	request.setCharacterEncoding("UTF-8");
+        int mar_num = Integer.parseInt(request.getParameter("mar_num"));
+        marketVO.setMar_num(mar_num);
+        
+        MarketDto resultVO = marketServiceImpl.selectMarketByCode(marketVO);
+        
+        model.addAttribute("result", resultVO);
+        
+        return "market/productDetail";
     }
 }

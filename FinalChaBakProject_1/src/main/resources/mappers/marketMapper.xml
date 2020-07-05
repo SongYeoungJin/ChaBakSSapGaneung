@@ -67,4 +67,6 @@
 		on c.mar_num = m.mar_num
 		where c.m_id = #{m_id}
 	</select>
+	
+	
 </mapper>

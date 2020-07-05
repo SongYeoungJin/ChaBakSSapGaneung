@@ -55,17 +55,16 @@
                     <a href='#' onClick='fn_cancel()'>목록</a>
                     <a href='#' onClick='fn_relay()'>답변</a>   
                 </div>
+                <!-- 
                 <p class="addToCart">
  					<button type="button" class="addCart_btn">카트에 담기</button>
- 
- 					<script>
-  						
- 					</script>
 				</p>
+				-->
             </div>
         </div>
     </form>
 <script>
+/*
 $(".addCart_btn").click(function(){
 	 	var mar_num = $("#mar_num").val();
 		var cartCount = $(".numBox").val();
@@ -94,7 +93,7 @@ $(".addCart_btn").click(function(){
 		}
 		});
 	});
-
+*/
 
 //목록
 function fn_cancel(){

@@ -102,7 +102,7 @@ public class RController {
 		response.setContentType("text/html; charset=UTF-8");
 	    request.setCharacterEncoding("UTF-8");
 	    response.setCharacterEncoding("UTF-8");
-		return "Point/buypoint";
+		return "Info/buypoint";
 	}
 	
 	@RequestMapping(value = "ReviewList", method = RequestMethod.GET)
