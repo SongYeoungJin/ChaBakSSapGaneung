@@ -6,6 +6,8 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.spring.ex.Dto.CartDto;
+import com.spring.ex.Dto.CartListDto;
 import com.spring.ex.Dto.MarketDto;
 import com.spring.ex.Dao.MarketDAO;
 
@@ -47,6 +49,16 @@ public class MarketServiceImpl implements MarketService{
 	        
 	        return resultVO; 
 	    }
+
+		@Override
+		public void addCart(CartDto cart) throws Exception {
+			marketDAOService.addCart(cart);
+		}
+
+		@Override
+		public List<CartListDto> cartList(String m_id) throws Exception {
+			return marketDAOService.cartList(m_id);
+		}
 	    
 
 	 

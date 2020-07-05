@@ -79,7 +79,7 @@ public class MemberController {
 			}else {
 				System.out.println("실패");
 			}
-			return "member_modify";
+			return "Info/myInfo";
 		}
 		// 로그아웃
 		@RequestMapping("/member_logout.ing")

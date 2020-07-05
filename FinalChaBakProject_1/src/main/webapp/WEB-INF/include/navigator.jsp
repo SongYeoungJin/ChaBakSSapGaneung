@@ -58,7 +58,7 @@
 									</span>
 								</div>
 							</li>
-					<li class="shopping-cart"><a href="myCart" class="cart"><span><small>0</small>
+					<li class="shopping-cart"><a href="cartList" class="cart"><span><small>0</small>
 					<i class="icon-shopping-cart"></i></span></a></li>
 
 				</ul>

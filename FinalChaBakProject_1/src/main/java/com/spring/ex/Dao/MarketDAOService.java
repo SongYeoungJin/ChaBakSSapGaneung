@@ -7,6 +7,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.spring.ex.Dto.CartDto;
+import com.spring.ex.Dto.CartListDto;
 import com.spring.ex.Dto.MarketDto;
 import com.spring.ex.mapper.MarketMapper;
 
@@ -47,4 +49,15 @@ public class MarketDAOService implements MarketDAO{
    	 
         return UUID.randomUUID().toString().replaceAll("-", "");
     }
+
+	@Override
+	public void addCart(CartDto cart) throws Exception {
+		MarketMapper mapper = sqlSession.getMapper(MarketMapper.class);
+		mapper.insert(cart);
+	}
+
+	@Override
+	public List<CartListDto> cartList(String m_id) throws Exception {
+		return sqlSession.selectList(m_id);
+	}
 }

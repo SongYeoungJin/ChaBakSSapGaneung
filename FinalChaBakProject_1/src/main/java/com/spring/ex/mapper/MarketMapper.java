@@ -2,6 +2,7 @@ package com.spring.ex.mapper;
 
 import java.util.List;
 
+import com.spring.ex.Dto.CartDto;
 import com.spring.ex.Dto.MarketDto;
 
 public interface MarketMapper {
@@ -19,4 +20,8 @@ public interface MarketMapper {
  
     // 게시물 조회
     public MarketDto selectMarketByCode(MarketDto marketVO) throws Exception;
+    
+    // 카트담기
+    public void insert(CartDto cart) throws Exception;
+
 }
