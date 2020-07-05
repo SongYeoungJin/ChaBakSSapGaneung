@@ -45,5 +45,5 @@ public interface BoardDAO {
     Community_Board_Dto selectBoardByCode(Community_Board_Dto boardVO) throws Exception;
     
     
- 
+    Community_Board_Dto selectBoardMember(Community_Board_Dto boardVO) throws Exception;
 }

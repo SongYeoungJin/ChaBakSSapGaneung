@@ -6,6 +6,7 @@
 	<typeAliases>
 		<typeAlias type="com.spring.ex.Dto.MemberDto" alias="MemberDto"></typeAlias>
 		<typeAlias type="com.spring.ex.Dto.placeDTO" alias="placeDTO"></typeAlias>
+		<typeAlias type="com.spring.ex.Dto.Cart_Dto" alias="Cart_Dto"></typeAlias>
 		<typeAlias type="com.spring.ex.Dto.AdminMemberDto" alias="AdminMemberDto"></typeAlias>
 	</typeAliases>
 	
@@ -15,6 +16,7 @@
 		<mapper resource="mappers/boardMapper.xml"/>
 		<mapper resource="mappers/placeMapper.xml" />
 		<mapper resource="mappers/reviewMapper.xml"/>
+		<mapper resource="mappers/cart_SQL.xml" />
 		<mapper resource="mappers/marketMapper.xml"/>
 	</mappers>
 </configuration>

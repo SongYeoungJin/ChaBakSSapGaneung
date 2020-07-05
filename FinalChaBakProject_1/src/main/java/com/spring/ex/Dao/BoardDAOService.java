@@ -46,6 +46,10 @@ public class BoardDAOService implements BoardDAO{
         BoardMapper mapper = sqlSession.getMapper(BoardMapper.class);
         return mapper.selectBoardByCode(boardVO);
     }
-    
+    @Override
+    public Community_Board_Dto selectBoardMember(Community_Board_Dto boardVO) throws Exception {
+        BoardMapper mapper = sqlSession.getMapper(BoardMapper.class);
+        return mapper.selectBoardMember(boardVO);
+    }
 
 }

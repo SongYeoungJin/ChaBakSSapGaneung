@@ -52,4 +52,13 @@
 		  FROM community_board
 		 WHERE cb_num = #{cb_num}
     </select>
+    
+     <select id="selectBoardMember" parameterType="com.spring.ex.Dto.Community_Board_Dto" resultType="com.spring.ex.Dto.Community_Board_Dto">
+		SELECT  
+		        cb_title, 
+		        cb_memo,
+		        cb_regdate
+		  FROM community_board
+		 WHERE m_num = #{m_num}
+    </select>
 </mapper>

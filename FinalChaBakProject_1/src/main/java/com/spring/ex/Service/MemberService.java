@@ -1,5 +1,7 @@
 package com.spring.ex.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,7 +29,10 @@ public class MemberService implements IMemberService {
 		return dao.memberUpdate(memdto);
 
 	}
-
+	@Override
+	public int memberDelete(MemberDto memdto) {
+		return dao.memberDelete(memdto);
+	}
 	@Override
 	public int pointUpdate(MemberDto memdto) {
 		return dao.pointUpdate(memdto);
@@ -44,5 +49,11 @@ public class MemberService implements IMemberService {
 	public MemberDto find_pw (MemberDto memdto) {
 		return dao.find_pw(memdto);
 	}
-	
+	@Override
+	public List<MemberDto> memberListAll() {
+		return dao.memberListAll();
+	}	@Override
+	public MemberDto selectMember (MemberDto memdto) {
+		return dao.selectMember(memdto);
+	}
 }

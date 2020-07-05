@@ -8,8 +8,14 @@ public class Community_Board_Dto {
 	private String cb_memo;			
 	private String cb_author;		
 	private java.sql.Date cb_regdate;
-	
+	private int m_num;
 
+	public int getM_num() {
+		return m_num;
+	}
+	public void setM_num(int m_num) {
+		this.m_num = m_num;
+	}
 	public java.sql.Date getCb_regdate() {
 		return cb_regdate;
 	}
@@ -43,6 +49,6 @@ public class Community_Board_Dto {
 	
 	public String toString() {
 		return "Community_Board_Dto [cb_num=" + cb_num + ",cb_title" + cb_title + ",cb_memo" + cb_memo 
-				+ ",cb_author" + cb_author + "]";
+				+ ",cb_author" + cb_author +m_num + ",m_num" +  "]";
 	}
 }

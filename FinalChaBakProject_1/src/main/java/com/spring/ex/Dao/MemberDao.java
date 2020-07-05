@@ -1,5 +1,7 @@
 package com.spring.ex.Dao;
 
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -47,7 +49,14 @@ public class MemberDao implements MemberIDao{
 		mybatis.insert("memberMapper.register", dto);
 	}
 	
-	
+	@Override
+	public int memberDelete(MemberDto memdto) {
+		
+		memdto.setM_id(memdto.getM_id());
+		memdto.setM_pw(memdto.getM_pw());
+		return mybatis.delete("memberMapper.memberDelete",memdto);
+		
+	}
 	@Override
 	public MemberDto find_id(MemberDto memdto) {
 		return mybatis.selectOne("memberMapper.find_id", memdto);
@@ -57,5 +66,13 @@ public class MemberDao implements MemberIDao{
 	public MemberDto find_pw(MemberDto memdto) {
 		return mybatis.selectOne("memberMapper.find_pw", memdto);
 	}
+	@Override
+	public MemberDto selectMember(MemberDto memdto) {
+		return mybatis.selectOne("memberMapper.selectdtailmember", memdto);
+	}
 
+	@Override
+	public List<MemberDto> memberListAll() {
+		return mybatis.selectList("memberMapper.memberListAll");
+	}
 }
