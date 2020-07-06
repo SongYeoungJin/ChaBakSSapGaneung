@@ -23,4 +23,6 @@ public interface BoardMapper {
     // 게시물 조회
     public Community_Board_Dto selectBoardByCode(Community_Board_Dto boardVO) throws Exception;
     
+    public Community_Board_Dto selectBoardMember(Community_Board_Dto boardVO) throws Exception;
+    
 }

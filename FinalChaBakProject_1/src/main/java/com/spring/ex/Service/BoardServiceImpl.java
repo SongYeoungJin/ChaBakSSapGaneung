@@ -48,4 +48,12 @@ public class BoardServiceImpl implements BoardService{
         
         return resultVO; 
     }
+
+	@Override
+	public Community_Board_Dto selectBoardMember(Community_Board_Dto boardVO) throws Exception {
+		 
+    	Community_Board_Dto resultVO = boardDAOService.selectBoardMember(boardVO);
+        
+        return resultVO; 
+	}
 }

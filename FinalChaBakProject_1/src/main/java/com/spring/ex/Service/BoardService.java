@@ -45,5 +45,5 @@ public interface BoardService {
      */
     public Community_Board_Dto selectBoardByCode(Community_Board_Dto boardVO) throws Exception;
     
- 
+    public Community_Board_Dto selectBoardMember(Community_Board_Dto boardVO) throws Exception;
 }
