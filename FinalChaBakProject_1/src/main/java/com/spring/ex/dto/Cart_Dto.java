@@ -7,6 +7,8 @@ public class Cart_Dto {
 	private int cart_num;
 	private int m_num;
 	private int mar_num;
+	private String mar_name;
+	private int mar_price;
 	private int cart_price;
 	private int cart_count;
 	private Date addDate;
@@ -27,6 +29,18 @@ public class Cart_Dto {
 	}
 	public void setMar_num(int mar_num) {
 		this.mar_num = mar_num;
+	}
+	public String getMar_name() {
+		return mar_name;
+	}
+	public void setMar_name(String mar_name) {
+		this.mar_name = mar_name;
+	}
+	public int getMar_price() {
+		return mar_price;
+	}
+	public void setMar_price(int mar_price) {
+		this.mar_price = mar_price;
 	}
 	public int getCart_price() {
 		return cart_price;

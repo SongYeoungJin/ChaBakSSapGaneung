@@ -5,13 +5,15 @@
 <mapper namespace="com.spring.ex.mapper.CartMapper">
 
  <select id="selectCartList" parameterType="com.spring.ex.dto.Cart_Dto" resultType="com.spring.ex.dto.Cart_Dto">
-		SELECT   cart_num
-			   , cart_price
-			   , cart_count
-			   , addDate
+		SELECT   c.cart_num
+			   , m.mar_name
+			   , m.mar_price
+			   , c.cart_count
+			   , c.addDate
 			
-		  FROM cart_2
-		  ORDER BY cart_num DESC
+		  FROM cart_2 c, market m
+		  WHERE c.cart_num= c.cart_num AND c.mar_num = m.mar_num
+		  ORDER BY c.cart_num DESC
 </select>
 
  
