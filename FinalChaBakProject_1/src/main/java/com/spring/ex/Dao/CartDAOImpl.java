@@ -5,9 +5,11 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Repository;
 
 import com.spring.ex.Dto.Cart3Dto;
 
+@Repository
 public class CartDAOImpl implements CartDAO{
 	 	@Inject
 	    SqlSession sqlSession; //root-context에 빈으로 등록한 mybatis객체
