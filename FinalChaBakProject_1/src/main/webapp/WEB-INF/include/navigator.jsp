@@ -24,7 +24,7 @@
 									<li><a href="ReviewList">장소후기게시판</a></li>
 								</ul></li>
 							
-							<li class="has-dropdown"><a href="productMain">차박용품</a>
+							<li class="has-dropdown"><a href="productList.do">차박용품</a>
 								<!-- <ul class="dropdown">
 									<li><a href="#">.</a></li>
 									<li><a href="#">.</a></li>
@@ -58,7 +58,7 @@
 									</span>
 								</div>
 							</li>
-					<li class="shopping-cart"><a href="myCart" class="cart"><span><small>0</small>
+					<li class="shopping-cart"><a href="cartList.do" class="cart"><span><small>0</small>
 					<i class="icon-shopping-cart"></i></span></a></li>
 
 				</ul>

@@ -1,14 +1,15 @@
 package com.spring.ex.dto;
 
-import java.util.Date;
+import java.sql.Date;
 
+//cart2 (vanlife3)
 public class Cart_Dto {
 	private int cart_num;
 	private int m_num;
 	private int mar_num;
-	private int cart_Stock;
-	private java.sql.Date addDate;
-	
+	private int cart_price;
+	private int cart_count;
+	private Date addDate;
 	public int getCart_num() {
 		return cart_num;
 	}
@@ -27,20 +28,23 @@ public class Cart_Dto {
 	public void setMar_num(int mar_num) {
 		this.mar_num = mar_num;
 	}
-	public int getCart_Stock() {
-		return cart_Stock;
+	public int getCart_price() {
+		return cart_price;
 	}
-	public void setCart_Stock(int cart_Stock) {
-		this.cart_Stock = cart_Stock;
+	public void setCart_price(int cart_price) {
+		this.cart_price = cart_price;
 	}
-	public java.sql.Date getAddDate() {
+	public int getCart_count() {
+		return cart_count;
+	}
+	public void setCart_count(int cart_count) {
+		this.cart_count = cart_count;
+	}
+	public Date getAddDate() {
 		return addDate;
 	}
-	public void setAddDate(java.sql.Date addDate) {
+	public void setAddDate(Date addDate) {
 		this.addDate = addDate;
 	}
-
 	
-	
-
 }

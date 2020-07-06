@@ -325,7 +325,7 @@ public class MemberController {
 	        boardVO.setM_num(m_num);
 	        Community_Board_Dto board = boardSer.selectBoardMember(boardVO);
 	        MemberDto resultVO = memSer.selectMember(dto);
-	        Cart_Dto cart = cartSer.selectCart(Cart_Dto);
+	        List<Cart_Dto> cart = cartSer.selectCartList(Cart_Dto);
 	        model.addAttribute("result", resultVO);
 	        model.addAttribute("cart", cart);
 	        model.addAttribute("board", board);

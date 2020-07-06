@@ -29,10 +29,6 @@ public class MarketController {
     
     /**
      * 게시판 조회
-     * @param marketVO
-     * @param model
-     * @return
-     * @throws Exception
      */
     @RequestMapping(value="/marketList.do")
     public String marketList(@ModelAttribute("marketVO") Market_Dto marketVO, Model model) throws Exception{
@@ -46,8 +42,6 @@ public class MarketController {
     
     /**
      * 글쓰기 폼
-     * @return
-     * @throws Exception
      */
     @RequestMapping(value="/MwriteForm.do")
     public String writeMarketForm() throws Exception{
@@ -57,10 +51,6 @@ public class MarketController {
     
     /**
      * 게시글 등록
-     * @param marketVO
-     * @param model
-     * @return
-     * @throws Exception
      */
     @RequestMapping(value="/Mwrite.do")
     public String write(@RequestParam("file") MultipartFile[] uploadFile, @ModelAttribute("marketVO") Market_Dto marketVO) throws Exception{
@@ -77,11 +67,6 @@ public class MarketController {
     
     /**
      * 게시글 조회
-     * @param marketVO
-     * @param model
-     * @param request
-     * @return
-     * @throws Exception
      */
     @RequestMapping(value="/MviewContent.do", method = RequestMethod.POST)
     public String viewForm(@ModelAttribute("marketVO") Market_Dto marketVO, Model model, HttpServletRequest request) throws Exception{
@@ -99,10 +84,6 @@ public class MarketController {
     
     /**
      * 게시글 수정
-     * @param marketVO
-     * @param model
-     * @return
-     * @throws Exception
      */
     @RequestMapping(value="/updatemarket.do", method = RequestMethod.POST)
     public String updateMarket(HttpServletRequest request,@ModelAttribute("marketVO") Market_Dto marketVO, Model model) throws Exception{
@@ -119,10 +100,6 @@ public class MarketController {
     
     /**
      * 게시글 삭제
-     * @param marketVO
-     * @param model
-     * @return
-     * @throws Exception
      */
     @RequestMapping(value="/deletemarket.do")
     public String deleteMarket(HttpServletRequest request,@ModelAttribute("marketVO") Market_Dto marketVO, Model model) throws Exception{

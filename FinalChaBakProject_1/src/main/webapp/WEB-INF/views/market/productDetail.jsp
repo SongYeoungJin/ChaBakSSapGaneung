@@ -7,84 +7,57 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>용품상세정보</title>
 <%@ include file="../../include/header.jsp" %>
 </head>
 
 <body>
 <%@ include file="../../include/navigator.jsp" %>
-<div>
-    <form id="viewForm" name="viewForm" method="post">
-    	<input type='hidden' id='mar_num' name='mar_num' value='${result.mar_num }' />
-        <div>
-            <h2>글쓰기</h2>
-            <div>
-                <table>
-                    <tr>
-                        <th>상품명</th>
-                        <td><input style="width: 500px" type="text" id="mar_name" name="mar_name" value="${result.mar_name }"/></td>
-                    </tr>
-                    <%--   <tr
-                        <th>상품사진</th>
-                        <td><img src="${result.mar_Img}" width="340" height="auto"/></td>
-                        <td><img src="${result.mar_ThumbImg}"/></td>
-                    </tr> --%>
-                    <tr>
-                        <th>내용</th>
-                        <td><textarea style="width: 500px" rows="10" cols="10" id="c" name="mar_content"><c:out value="${result.mar_content }"/></textarea></td>
-                    </tr>
-                    <tr>
-                        <th>가격</th>
-                        <td>
-                        <fmt:formatNumber value="${result.mar_price}" pattern="###,###,###"/>
-                        <%-- <input style="width: 500px" type="text" id="mar_price" name="mar_price" value="${result.mar_price }"/> --%></td>
-                    </tr>
-                    <c:if test="${result.mar_Img != null && result.mar_Img != ''}">
-                        <tr>
-                    	<th>파일</th>
-						<td>
-							<img style="width: 200px; height: auto;" src="data:image/jpeg;base64,<c:out value='${result.mar_Img}'/>"/>
-						</td>
-                    </tr>
-                    </c:if>
-                    <tr>
-                        <th>수량</th>
-                        <td><input style="width: 500px" type="text" id="mar_count" name="mar_count" value="${result.mar_count }"/></td>
-                    </tr>
-                </table>
-                <div>
-                    <a href='#' onClick='fn_update()'>수정</a>
-                    <a href='#' onClick='fn_delete()'>삭제</a>
-                    <a href='#' onClick='fn_cancel()'>목록</a>
-                </div>
-            </div>
-        </div>
-    </form>
+<div class="container">
+	<form id="productDetailForm" name="productDetailForm" method="post">	
+		<div class="row">
+ 			<div class="col-lg-9">
+					<div class="card mt-4">
+						<img src="  ">
+						<div class="card-body">
+							<h3 class="card-title" id="mar_name">
+								<c:out value='${result.mar_name}' />
+							</h3>
+							<h4 id="mar_price">
+								<c:out value='${result.mar_price}' />
+							</h4>
+							<p class="card-text" id="mar_content"">
+								<c:out value='${result.mar_content}' />
+							</p>
+							<span class="text-warning">★ ★ ★ ★ ★ </span> 5.0
+							&nbsp;&nbsp;&nbsp;
+							<!-- <a class="btn btn-success" href="#" onClick="fn_payment()">구매확정</a> -->
+							<a class="btn btn-success" href="#" onClick="fn_cart()">장바구니</a>
+						</div>
+					</div>
+					<!-- 상품리뷰는 일단 그냥뺐음 -->
+				</div>
+			</div>
+		</form>
+
+					
 <script>
 //목록
-function fn_cancel(){
+function fn_cart(){
     
-    var form = document.getElementById("viewForm");
-    form.action = "<c:url value='/marketList.do'/>";
-    form.submit();
+	var form = document.getElementById("productDetailForm");
+    var url = "<c:url value='/cart.do'/>";
+    url = url + "?mar_num=" + mar_num;
+    form.action = url;    
+    form.submit(); 
     
 }
  
- 
-//수정
-function fn_update(){
-    
-    var form = document.getElementById("viewForm");
-    form.action = "<c:url value='/updatemarket.do'/>";
-    form.submit();
-}
 
-//삭제
-function fn_delete(){
-    
-    var form = document.getElementById("viewForm");
-    form.action = "<c:url value='/deletemarket.do'/>";
-    form.submit();
-}
  
 
 </script>

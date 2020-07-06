@@ -4,12 +4,15 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.spring.ex.mapper.CartMapper">
 
- <select id="selectCart" parameterType="com.spring.ex.dto.Cart_Dto" resultType="com.spring.ex.dto.Cart_Dto">
-			SELECT  *
-		  FROM cart
-		 WHERE m_num = #{m_num}
-		
-    </select>
+ <select id="selectCartList" parameterType="com.spring.ex.dto.Cart_Dto" resultType="com.spring.ex.dto.Cart_Dto">
+		SELECT   cart_num
+			   , cart_price
+			   , cart_count
+			   , addDate
+			
+		  FROM cart_2
+		  ORDER BY cart_num DESC
+</select>
 
  
 

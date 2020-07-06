@@ -23,5 +23,6 @@
 		<mapper resource="mappers/market_SQL.xml" />
 		<mapper resource="mappers/placeMapper.xml" />
 		<mapper resource="mappers/board_comment_Mapper.xml" />
+		<mapper resource="mappers/cart_SQL.xml" />
 	</mappers>
 </configuration>
