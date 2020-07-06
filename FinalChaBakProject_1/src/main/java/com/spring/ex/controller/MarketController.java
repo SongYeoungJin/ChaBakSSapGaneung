@@ -149,13 +149,14 @@ public class MarketController {
         return "market/productList";
     }
     
-    @RequestMapping(value="/productDetail.do", method = RequestMethod.POST)
+    @RequestMapping(value="/productDetail.do", method = {RequestMethod.POST, RequestMethod.GET})
     public String productDetail(@ModelAttribute("marketVO") Market_Dto marketVO, Model model, HttpServletRequest request) throws Exception{
-        Market_Dto resultVO = marketServiceImpl.selectMarketByCode(marketVO);
+        /*
+    	Market_Dto resultVO = marketServiceImpl.selectMarketByCode(marketVO);
         model.addAttribute("result", resultVO);
 		return "market/productDetail";
+    	*/
     	
-    	/*
     	System.out.println("시작");
     	request.setCharacterEncoding("UTF-8");
         int mar_num = Integer.parseInt(request.getParameter("mar_num"));
@@ -166,7 +167,7 @@ public class MarketController {
         model.addAttribute("result", resultVO);
         
         return "market/productDetail";
-        */
+        
     	
     }
 }
