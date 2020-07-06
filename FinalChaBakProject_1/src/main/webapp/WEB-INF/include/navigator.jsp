@@ -20,7 +20,7 @@
 								</ul></li>
 							<li class="has-dropdown"><a href="ReviewList" id="current">차박커뮤니티</a>
 							<ul class="dropdown">
-									<li><a href="list2">자유게시판</a></li>
+									<li><a href="boardList.do">자유게시판</a></li>
 									<li><a href="ReviewList">장소후기게시판</a></li>
 								</ul></li>
 							

@@ -28,23 +28,6 @@
 
 	<!-- Page Content -->
 	<div class="container">
-		<!-- 
-  <div class="py-5 bg-image" style='background-color:#0000ff'>
-  -->
-
-		<div class="row">
-			<div class="col-lg-3">
-
-				<h2 class="my-5"></h2>
-				<div class="list-group">
-					<a class="list-group-item" href="ReviewList.do">리뷰목록</a>
-
-				</div>
-
-			</div>
-		</div>
-
-
 		<table class="table table-striped table-bordered table-hover">
 			<tr>
 				<td>
@@ -59,9 +42,6 @@
 				</td>
 			</tr>
 			</table>
-
-
-
 		<table width="51%" cellpadding="0" cellspacing="0" border="0"
 			class="table">
 			<tr height="5">
@@ -83,10 +63,8 @@
 				<td colspan="6" width="752"></td>
 			</tr>
 		</table>
-
             	<table width="100%" cellpadding="0" cellspacing="0" border="0"
 					class="table">
-				
 					<tr>
 						<td colspan="4" height="5"></td>
 					</tr>
