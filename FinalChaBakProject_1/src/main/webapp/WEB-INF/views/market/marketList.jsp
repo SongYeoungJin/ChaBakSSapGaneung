@@ -55,7 +55,7 @@ function fn_write(){
     
     var form = document.getElementById("marketForm");
     
-    form.action = "<c:url value='/market/writeForm.do'/>";
+    form.action = "<c:url value='/MwriteForm.do'/>";
     form.submit();
     
 }
@@ -64,7 +64,7 @@ function fn_write(){
 function fn_view(mar_num){
     
     var form = document.getElementById("marketForm");
-    var url = "<c:url value='/market/viewContent.do'/>";
+    var url = "<c:url value='/MviewContent.do'/>";
     url = url + "?mar_num=" + mar_num;
     
     form.action = url;    
@@ -81,7 +81,7 @@ function fn_delete(mar_num) {
 			chk = true; 
 			var form = document.getElementById(mar_num);
 			alert(form + " 삭제?");
-			form.action = "<c:url value='/market/deletemarket.do'/>";
+			form.action = "<c:url value='/deletemarket.do'/>";
 			url = url + "?cb_num=" + cb_num;
 		    form.submit();
 			} 

@@ -114,7 +114,7 @@ function fn_write(){
     
     var form = document.getElementById("boardForm");
     
-    form.action = "<c:url value='/board/writeForm.do'/>";
+    form.action = "<c:url value='/BwriteForm.do'/>";
     form.submit();
     
 }
@@ -123,7 +123,7 @@ function fn_write(){
 function fn_view(cb_num){
     
     var form = document.getElementById("boardForm");
-    var url = "<c:url value='/board/viewContent.do'/>";
+    var url = "<c:url value='/BviewContent.do'/>";
     url = url + "?cb_num=" + cb_num;
     
     form.action = url;    
@@ -140,7 +140,7 @@ function fn_delete(cb_num) {
 			chk = true; 
 			var form = document.getElementById(cb_num);
 			alert(form + " 삭제?");
-			form.action = "<c:url value='/board/deleteboard.do'/>";
+			form.action = "<c:url value='/deleteboard.do'/>";
 			url = url + "?cb_num=" + cb_num;
 		    form.submit();
 			} 

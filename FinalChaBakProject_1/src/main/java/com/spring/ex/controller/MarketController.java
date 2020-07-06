@@ -34,7 +34,7 @@ public class MarketController {
      * @return
      * @throws Exception
      */
-    @RequestMapping(value="/market/marketList.do")
+    @RequestMapping(value="/marketList.do")
     public String marketList(@ModelAttribute("marketVO") Market_Dto marketVO, Model model) throws Exception{
                 
         List<Market_Dto> list = marketServiceImpl.selectMarketList(marketVO);
@@ -49,7 +49,7 @@ public class MarketController {
      * @return
      * @throws Exception
      */
-    @RequestMapping(value="/market/writeForm.do")
+    @RequestMapping(value="/MwriteForm.do")
     public String writeMarketForm() throws Exception{
         
         return "market/writeForm";
@@ -62,7 +62,7 @@ public class MarketController {
      * @return
      * @throws Exception
      */
-    @RequestMapping(value="/market/write.do")
+    @RequestMapping(value="/Mwrite.do")
     public String write(@RequestParam("file") MultipartFile[] uploadFile, @ModelAttribute("marketVO") Market_Dto marketVO) throws Exception{
     	System.out.println(marketVO);
     	String base64 = "";
@@ -72,7 +72,7 @@ public class MarketController {
 		}
     	marketVO.setMar_Img(base64);
         marketServiceImpl.insertMarket(marketVO);
-        return "redirect:/market/marketList.do";
+        return "redirect:/marketList.do";
     }
     
     /**
@@ -83,7 +83,7 @@ public class MarketController {
      * @return
      * @throws Exception
      */
-    @RequestMapping(value="/market/viewContent.do", method = RequestMethod.POST)
+    @RequestMapping(value="/MviewContent.do", method = RequestMethod.POST)
     public String viewForm(@ModelAttribute("marketVO") Market_Dto marketVO, Model model, HttpServletRequest request) throws Exception{
         
     	request.setCharacterEncoding("UTF-8");
@@ -104,7 +104,7 @@ public class MarketController {
      * @return
      * @throws Exception
      */
-    @RequestMapping(value="/market/updatemarket.do", method = RequestMethod.POST)
+    @RequestMapping(value="/updatemarket.do", method = RequestMethod.POST)
     public String updateMarket(HttpServletRequest request,@ModelAttribute("marketVO") Market_Dto marketVO, Model model) throws Exception{
         
         try{
@@ -113,7 +113,7 @@ public class MarketController {
             e.printStackTrace();
         }        
         
-        return "redirect:/market/marketList.do";
+        return "redirect:/marketList.do";
         
     }
     
@@ -124,7 +124,7 @@ public class MarketController {
      * @return
      * @throws Exception
      */
-    @RequestMapping(value="/market/deletemarket.do")
+    @RequestMapping(value="/deletemarket.do")
     public String deleteMarket(HttpServletRequest request,@ModelAttribute("marketVO") Market_Dto marketVO, Model model) throws Exception{
         
         try{
@@ -134,7 +134,39 @@ public class MarketController {
             e.printStackTrace();
         }        
         
-        return "redirect:/market/marketList.do";
+        return "redirect:/marketList.do";
         
+    }
+    
+    
+    @RequestMapping(value="/productList.do")
+    public String productList(@ModelAttribute("marketVO") Market_Dto marketVO, Model model) throws Exception{
+                
+        List<Market_Dto> list = marketServiceImpl.selectMarketList(marketVO);
+        
+        model.addAttribute("list", list);
+        
+        return "market/productList";
+    }
+    
+    @RequestMapping(value="/productDetail.do", method = RequestMethod.POST)
+    public String productDetail(@ModelAttribute("marketVO") Market_Dto marketVO, Model model, HttpServletRequest request) throws Exception{
+        Market_Dto resultVO = marketServiceImpl.selectMarketByCode(marketVO);
+        model.addAttribute("result", resultVO);
+		return "market/productDetail";
+    	
+    	/*
+    	System.out.println("시작");
+    	request.setCharacterEncoding("UTF-8");
+        int mar_num = Integer.parseInt(request.getParameter("mar_num"));
+        marketVO.setMar_num(mar_num);
+        
+        Market_Dto resultVO = marketServiceImpl.selectMarketByCode(marketVO);
+        
+        model.addAttribute("result", resultVO);
+        
+        return "market/productDetail";
+        */
+    	
     }
 }

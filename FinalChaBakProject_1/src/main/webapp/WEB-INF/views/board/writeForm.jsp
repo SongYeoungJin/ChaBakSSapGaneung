@@ -92,7 +92,7 @@ function readURL(input) {
 //글쓰기
 function fn_addtoBoard(){
     var form = document.getElementById("writeForm");
-    form.action = "<c:url value='/board/write.do'/>";
+    form.action = "<c:url value='/Bwrite.do'/>";
     form.submit();
 }
  
@@ -111,7 +111,7 @@ function fn_cancel(){
     
     var form = document.getElementById("writeForm");
     alert(form);
-    form.action = "<c:url value='/board/boardList.do'/>";
+    form.action = "<c:url value='/boardList.do'/>";
     form.submit();
     
 }

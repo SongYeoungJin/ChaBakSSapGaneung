@@ -86,7 +86,7 @@
 //글쓰기
 function fn_addtoBoard(){
     var form = document.getElementById("writeForm");
-    form.action = "<c:url value='/market/write.do'/>";
+    form.action = "<c:url value='/Mwrite.do'/>";
     form.submit();
 }
  
@@ -105,7 +105,7 @@ function fn_cancel(){
     
     var form = document.getElementById("writeForm");
     alert(form);
-    form.action = "<c:url value='/market/marketList.do'/>";
+    form.action = "<c:url value='/marketList.do'/>";
     form.submit();
     
 }

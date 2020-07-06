@@ -33,7 +33,7 @@ public class BoardController {
      * @return
      * @throws Exception
      */
-    @RequestMapping(value="/board/boardList.do")
+    @RequestMapping(value="/boardList.do")
     public String boardList(@ModelAttribute("boardVO") Community_Board_Dto boardVO, Model model) throws Exception{
                 
         List<Community_Board_Dto> list = boardServiceImpl.selectBoardList(boardVO);
@@ -48,7 +48,7 @@ public class BoardController {
      * @return
      * @throws Exception
      */
-    @RequestMapping(value="/board/writeForm.do")
+    @RequestMapping(value="/BwriteForm.do")
     public String writeBoardForm() throws Exception{
         
         return "board/writeForm";
@@ -61,10 +61,10 @@ public class BoardController {
      * @return
      * @throws Exception
      */
-    @RequestMapping(value="/board/write.do")
+    @RequestMapping(value="/Bwrite.do")
     public String write(@ModelAttribute("boardVO") Community_Board_Dto boardVO, Model model) throws Exception{
         boardServiceImpl.insertBoard(boardVO);
-        return "redirect:/board/boardList.do";
+        return "redirect:/boardList.do";
     }
     
     /**
@@ -75,7 +75,7 @@ public class BoardController {
      * @return
      * @throws Exception
      */
-    @RequestMapping(value="/board/viewContent.do")
+    @RequestMapping(value="/BviewContent.do")
     public String viewForm(@ModelAttribute("boardVO") Community_Board_Dto boardVO, Model model, HttpServletRequest request) throws Exception{
         
     	request.setCharacterEncoding("UTF-8");
@@ -100,7 +100,7 @@ public class BoardController {
      * @return
      * @throws Exception
      */
-    @RequestMapping(value="/board/updateboard.do", method = RequestMethod.POST)
+    @RequestMapping(value="/updateboard.do", method = RequestMethod.POST)
     public String updateBoard(HttpServletRequest request,@ModelAttribute("boardVO") Community_Board_Dto boardVO, Model model) throws Exception{
         
         try{
@@ -109,7 +109,7 @@ public class BoardController {
             e.printStackTrace();
         }        
         
-        return "redirect:/board/boardList.do";
+        return "redirect:/boardList.do";
         
     }
     
@@ -120,7 +120,7 @@ public class BoardController {
      * @return
      * @throws Exception
      */
-    @RequestMapping(value="/board/deleteboard.do")
+    @RequestMapping(value="/deleteboard.do")
     public String deleteBoard(HttpServletRequest request, @ModelAttribute("boardVO") Community_Board_Dto boardVO, Model model) throws Exception{
         
         try{
@@ -130,7 +130,7 @@ public class BoardController {
             e.printStackTrace();
         }        
         
-        return "redirect:/board/boardList.do";
+        return "redirect:/boardList.do";
         
     }
     

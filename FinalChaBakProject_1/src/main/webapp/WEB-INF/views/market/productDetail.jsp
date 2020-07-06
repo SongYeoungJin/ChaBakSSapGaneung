@@ -7,9 +7,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<%@ include file="../../include/header.jsp" %>
 </head>
 
 <body>
+<%@ include file="../../include/navigator.jsp" %>
 <div>
     <form id="viewForm" name="viewForm" method="post">
     	<input type='hidden' id='mar_num' name='mar_num' value='${result.mar_num }' />
@@ -21,7 +23,7 @@
                         <th>상품명</th>
                         <td><input style="width: 500px" type="text" id="mar_name" name="mar_name" value="${result.mar_name }"/></td>
                     </tr>
-                    <%--   <tr>
+                    <%--   <tr
                         <th>상품사진</th>
                         <td><img src="${result.mar_Img}" width="340" height="auto"/></td>
                         <td><img src="${result.mar_ThumbImg}"/></td>
@@ -53,7 +55,6 @@
                     <a href='#' onClick='fn_update()'>수정</a>
                     <a href='#' onClick='fn_delete()'>삭제</a>
                     <a href='#' onClick='fn_cancel()'>목록</a>
-                    <a href='#' onClick='fn_relay()'>답변</a>                    
                 </div>
             </div>
         </div>
@@ -85,14 +86,7 @@ function fn_delete(){
     form.submit();
 }
  
-//답변
-function fn_relay(){
-    
-    var form = document.getElementById("viewForm");
-    form.action = "<c:url value='/relayForm.do'/>";
-    form.submit();
-    
-}
+
 </script>
 </div>
 </body>

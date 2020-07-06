@@ -91,7 +91,7 @@
 			function fn_cancel() {
 
 				var form = document.getElementById("viewForm");
-				form.action = "<c:url value='/board/boardList.do'/>";
+				form.action = "<c:url value='/boardList.do'/>";
 				form.submit();
 
 			}
@@ -100,7 +100,7 @@
 			function fn_update() {
 
 				var form = document.getElementById("viewForm");
-				form.action = "<c:url value='/board/updateboard.do'/>";
+				form.action = "<c:url value='/updateboard.do'/>";
 				form.submit();
 			}
 
@@ -108,7 +108,7 @@
 			function fn_delete() {
 
 				var form = document.getElementById("viewForm");
-				form.action = "<c:url value='/board/deleteboard.do'/>";
+				form.action = "<c:url value='/deleteboard.do'/>";
 				form.submit();
 			}
 
@@ -116,7 +116,7 @@
 			function fn_relay() {
 
 				var form = document.getElementById("viewForm");
-				form.action = "<c:url value='/board/relayForm.do'/>";
+				form.action = "<c:url value='/relayForm.do'/>";
 				form.submit();
 
 			}
