@@ -47,15 +47,14 @@
 							<div class="col-lg-4 col-md-6 mb-4">
 								<div class="card h-100">
 									<a href="#" onClick='fn_view()'> 
-										<img style="width: 200px; height: auto;"<c:out value='${result.mar_Img}'/>" /></a>
+										<img style="width: 100; height: 100;"<c:out value='${result.mar_Img}'/>" /></a>
 										<div class="card-body">
 											<h4 class="card-title">
-												<a href="#"><c:out
-														value="${result.mar_name }" /></a>
+												<!-- <a href="#" onClick='fn_view()'><c:out value="${result.mar_name }" /></a>-->
+												<a href ="${path }/market/productDetail/${result.mar_num }">${result.mar_name }</a>
 											</h4>
 											<h5>
-												<fmt:formatNumber value="${result.mar_price}"
-													pattern="###,###,###" />
+												<fmt:formatNumber value="${result.mar_price}" pattern="###,###,###" />
 											</h5>
 											<p class="card-text">
 												<c:out value="${result.mar_content }" />

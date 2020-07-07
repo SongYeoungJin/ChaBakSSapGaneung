@@ -4,6 +4,9 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+
+<!-- path 변수 선언, request객체가 가진 쿼리 문자열 반환된 값 저장-->
+<c:set var="path" value="${pageContext.request.contextPath}" />
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>ChaBak</title>

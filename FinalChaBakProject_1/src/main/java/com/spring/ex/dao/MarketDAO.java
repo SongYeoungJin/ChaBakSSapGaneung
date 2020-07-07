@@ -42,4 +42,7 @@ public interface MarketDAO {
      * @throws Exception
      */
     Market_Dto selectMarketByCode(Market_Dto marketVO) throws Exception;
+    
+    List<Market_Dto> listProduct() throws Exception;
+    Market_Dto detailProduct(int mar_num) throws Exception;
 }

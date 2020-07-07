@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%-- <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
@@ -50,7 +50,7 @@
 function fn_cart(){
     
 	var form = document.getElementById("productDetailForm");
-    var url = "<c:url value='/cart.do'/>";
+    var url = "<c:url value='/cartList.do'/>";
     url = url + "?mar_num=" + mar_num;
     form.action = url;    
     form.submit(); 
@@ -63,4 +63,67 @@ function fn_cart(){
 </script>
 </div>
 </body>
+</html> --%>
+
+
+
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+ 
+<%@include file="../../include/header.jsp"%>
+ 
+</head>
+<body>
+<%@ include file="../../include/navigator.jsp" %>
+    <h2>상품 정보</h2>
+    <table>
+        <tr>
+            <!-- 이미지를 불러오기위한 url 작성 -->
+            <td><img src="${path}/images/${dto.mar_Img}" width="300px"
+                height="300px"></td>
+            <td align="center">
+                <table>
+                    <tr>
+                        <td>상품명</td>
+                        <td>${dto.mar_name }</td>
+                    </tr>
+ 
+                    <tr>
+                        <td>가격</td>
+                        <td>${dto.mar_price }</td>
+                    </tr>
+ 
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>${dto.mar_content }</td>
+                    </tr>
+ 
+                    <tr>
+                        <td colspan="2">
+						<form name="form1" method="post"
+                            action="${path }/market/cartList.do">
+                                <input type="hidden" name="mar_num"
+                                    value="${dto.mar_num }">
+                                <!-- 상품코드를 히든타입으로 넘김 -->
+                                <select name="amount">
+                                    <c:forEach begin="1" end="10" var="i">
+                                        <option value="${i}">${i}</option>
+                                        <!-- 장바구니에  10개 까지 담을수 있다.-->
+                                    </c:forEach>
+                                </select>&nbsp;개 <input type="submit" value="장바구니에 담기">
+						</form> <a href="${path}/list.do">상품목록</a>
+                        </td>
+                    </tr>
+                </table>
+    </table>
+</body>
 </html>
+
+
+
+

@@ -48,6 +48,17 @@ public class MarketServiceImpl implements MarketService{
 	        return resultVO; 
 	    }
 	    
-
+	    
+	    
+	    
+	    
+	    @Override
+	    public List<Market_Dto> listProduct() throws Exception {
+	        return marketDAOService.listProduct(); //데이터베이스에 저장된 상품 리스트를 리턴한다.
+	    }
+	    @Override
+	    public Market_Dto detailProduct(int mar_num) throws Exception {
+	        return marketDAOService.detailProduct(mar_num);    //상품아이디를 매개변수로 받아서 Dao에 있는 상품의 정보를 리턴
+	    }
 	 
 }

@@ -41,4 +41,10 @@ public interface MarketService {
      * @throws Exception
      */
     public Market_Dto selectMarketByCode(Market_Dto marketVO) throws Exception;
+    
+    
+    public List<Market_Dto> listProduct() throws Exception;
+
+    public Market_Dto detailProduct(int mar_num) throws Exception;
+
 }
