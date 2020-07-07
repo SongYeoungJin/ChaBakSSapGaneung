@@ -85,11 +85,12 @@ public class BoardController {
         Community_Board_Dto resultVO = boardServiceImpl.selectBoardByCode(boardVO);
         community_board_comment_Dto commentVO = new community_board_comment_Dto();
         commentVO.setCb_num(cb_num);
-        List<community_board_comment_Dto> commList = commentSer.SelectList(commentVO);
+        List<community_board_comment_Dto> commList = commentSer.commnetList(cb_num);
         System.out.println("댓글 갯수:"+commList.size());
         model.addAttribute("result", resultVO);
         model.addAttribute("comment", commList);
-        
+       
+        System.out.println(commList);
         return "board/viewForm";
     }
     

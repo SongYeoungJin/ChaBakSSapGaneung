@@ -43,7 +43,7 @@
         </div>
   </form>
   <div class="container">
-  	<form id="form1" name="form1" action="commentInsert.ing" method="post">
+  	<form id="form1" name="form1" action="board/commentInsert.ing" method="post">
 	  	<label for="content">댓글</label>
 	  	<div class="input-group">
   			<input type="hidden" name="cb_num" value="${result.cb_num}"/>
@@ -68,7 +68,7 @@
 							<tr>
 								<td>${comm.m_name}${comm.cbc_memo} ${comm.cbc_regdate} 
 								    <a onclick="reple_modify(${comm.cbc_num})" href="#">수정</a>
-									<a href="commentDelete.do?cbc_num=${comm.cbc_num}&cb_num=${result.cb_num}">삭제</a>
+									<a href="board/commentDelete.do?cbc_num=${comm.cbc_num}&cb_num=${comm.cb_num}">삭제</a>
 									<!-- 				<button type="button" class="btn btn-sm btn-secondary" id="btnDelete">삭제</button> -->
 								</td>
 							</tr>
@@ -124,10 +124,10 @@
 			
 			
 			//댓글 수정 View
-			function reple_modify(id){
+				function reple_modify(id){
 			    var a ='';
 			    
-			    a += '<form id="form_'+id+'" action="commentUpdate.do?cbc_num='+id+'&cb_num='+${result.cb_num}+'" method="post">';
+			    a += '<form id="form_'+id+'" action="commentUpdate.do?cbc_num='+id+'&cb_num='+${result.cbc_num}+'" method="post">';
 			    a += '<div class="input-group">';
 			    a += '<input type="text" class="form-control" name="cbc_memo"/>';
 			    a += '<span class="input-group-btn"><input type="submit" value="수정" class="btn btn-default"> </span>';
@@ -136,7 +136,6 @@
 			    
 			    $('#reple_modify_'+id).html(a);
 			}
-			
 			
 			
 		</script>

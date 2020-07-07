@@ -20,107 +20,110 @@ import com.spring.ex.service.CommunityBoardCommentServiceImpl;
 @Controller
 @RequestMapping(value = "/board")
 public class BoardcommnetController {
-	
+
 	@Autowired
 	CommunityBoardCommentServiceImpl commentSer;
-	
+
 	@RequestMapping(value = "/commentInsert.ing", method = RequestMethod.POST)
-	public String commentInsert_ing(HttpServletRequest request, HttpServletResponse response, community_board_comment_Dto commentDto) throws IOException {
+	public String commentInsert_ing(HttpServletRequest request, HttpServletResponse response,
+			community_board_comment_Dto commentDto) throws IOException {
 		response.setContentType("text/html; charset=UTF-8");
-		
+
 		int m_num = 0;
-		
+
 //		HttpSession session = request.getSession();
 //		m_num = Integer.parseInt(session.getAttribute("회원번호").toString());
-		
+
 		m_num = 47;
-		
-		//PrintWriter out = response.getWriter();
+
+		// PrintWriter out = response.getWriter();
 		commentDto.setCbc_m_num(String.valueOf(m_num));
 		try {
 			int res = commentSer.commentInsert(commentDto);
-			if(res > 0) {
-				//out.println("Y");
+			if (res > 0) {
+				// out.println("Y");
 			} else {
-				//out.println("N");
+				// out.println("N");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			//out.println("E");
+			// out.println("E");
 		} finally {
-			//out.flush();
+			// out.flush();
 		}
-		
-		return "redirect:/board/viewContent.do?cb_num=" + commentDto.getCb_num();
+
+		return "redirect:/BviewContent.do?cb_num=" + commentDto.getCb_num();
 	}
-	
-	
-	
-	//댓글 수정 
+
+	// 댓글 수정
 	@RequestMapping("/commentUpdate.do")
-	public String modify(HttpServletRequest request, HttpServletResponse response, community_board_comment_Dto commentDto) throws IOException {
-	response.setContentType("text/html; charset=UTF-8");
-	
-	int m_num = 0;
-	
+	public String modify(HttpServletRequest request, HttpServletResponse response,
+			community_board_comment_Dto commentDto) throws IOException {
+		response.setContentType("text/html; charset=UTF-8");
+
+		int cb_num = 0;
+		int cbc_num = 0;
+
 //	HttpSession session = request.getSession();
 //	m_num = Integer.parseInt(session.getAttribute("회원번호").toString());
-	
-	m_num = 47;
-	
-	//PrintWriter out = response.getWriter();
-	commentDto.setCbc_m_num(String.valueOf(m_num));
-	try {
-		int res = commentSer.commentUpdate(commentDto);
-		if(res > 0) {
-			//out.println("Y");
-		} else {
-			//out.println("N");
-		}
-	} catch (Exception e) {
-		e.printStackTrace();
-		//out.println("E");
-	} finally {
-		//out.flush();
-	}
-	
-	return "redirect:/board/viewContent.do?cb_num=" + commentDto.getCb_num();
 
-}
-	
-	
-	//댓글 삭제 
-	
+		cbc_num = Integer.parseInt(request.getParameter("cbc_num"));
+		cb_num = Integer.parseInt(request.getParameter("cb_num"));
+		String memo = (String) request.getParameter("cbc_memo");
+		// PrintWriter out = response.getWriter();
+		commentDto.setCbc_m_num(String.valueOf(cbc_num));
+		commentDto.setCbc_num(cb_num);
+		commentDto.setCbc_memo(memo);
+		try {
+			int res = commentSer.commentUpdate(commentDto);
+			if (res > 0) {
+				// out.println("Y");
+			} else {
+				// out.println("N");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			// out.println("E");
+		} finally {
+			// out.flush();
+		}
+
+		return "redirect:/BviewContent.do?cb_num=" + commentDto.getCb_num();
+
+	}
+
+	// 댓글 삭제
+
 	@RequestMapping("/commentDelete.do")
-	public String delete(HttpServletRequest request, HttpServletResponse response, community_board_comment_Dto commentDto) throws IOException {
-	response.setContentType("text/html; charset=UTF-8");
-	
-	int m_num = 0;
-	
+	public String delete(HttpServletRequest request, HttpServletResponse response,
+			community_board_comment_Dto commentDto) throws IOException {
+		response.setContentType("text/html; charset=UTF-8");
+
+		int m_num = 0;
+int cb_num=0;
 //	HttpSession session = request.getSession();
 //	m_num = Integer.parseInt(session.getAttribute("회원번호").toString());
-	
-	m_num = 47;
-	
-	//PrintWriter out = response.getWriter();
-	commentDto.setCbc_m_num(String.valueOf(m_num));
-	try {
-		int res = commentSer.commentDelete(commentDto);
-		if(res > 0) {
-			//out.println("Y");
-		} else {
-			//out.println("N");
-		}
-	} catch (Exception e) {
-		e.printStackTrace();
-		//out.println("E");
-	} finally {
-		//out.flush();
-	}
-	
-	return "redirect:/board/viewContent.do?cb_num=" + commentDto.getCb_num();
 
-}
-	
-	
+		m_num = Integer.parseInt(request.getParameter("cbc_num"));
+		cb_num= Integer.parseInt(request.getParameter("cb_num"));
+		// PrintWriter out = response.getWriter();
+		commentDto.setCbc_num(m_num);
+		try {
+			int res = commentSer.commentDelete(commentDto);
+			if (res > 0) {
+				// out.println("Y");
+			} else {
+				// out.println("N");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			// out.println("E");
+		} finally {
+			// out.flush();
+		}
+
+		return "redirect:/BviewContent.do?cb_num=" + cb_num;
+
+	}
+
 }

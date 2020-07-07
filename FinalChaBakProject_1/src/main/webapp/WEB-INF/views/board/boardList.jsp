@@ -71,7 +71,7 @@
                  <c:forEach var="result" items="${list }" varStatus="status"> 
                     	<td><input type="checkbox" name='chkbox'>
                         <td><c:out value="${result.cb_num }"/></td>
-                        <td><a href='#' onClick='fn_view(${result.cb_num})'><c:out value="${result.cb_title }"/></a></td>
+                        <td><a href='BviewContent.do?cb_num=${result.cb_num}' onClick='fn_view(${result.cb_num})'><c:out value="${result.cb_title }"/></a></td>
                         <td><c:out value="${result.cb_memo }"/></td>
                         <td><c:out value="${result.cb_author }"/></td>
                         <td><fmt:formatDate value="${result.cb_regdate}" pattern="yyyy-MM-dd" /></td>
@@ -79,10 +79,40 @@
                 </c:forEach>
             </tbody>
         </table>
-        <div>            
+        
+        
+        
+        
+        <table width="100%" cellpadding="0" cellspacing="0" border="0"
+			class="table">
+			<tr align="center">
+				<td align="right"><input type=button class="btn btn-secondary"
+					value="글쓰기" onClick="location='board/BwriteForm.do'"> <input
+					type=button class="btn btn-secondary" value="이 전"
+					onClick="history.go(-1)"> <input type=button
+					class="btn btn-secondary" value="삭 제" onClick="fn_delete()">
+
+					<div class="box">
+						<div class="container-1">
+							<span class="icon"><i class="fa fa-search"></i></span> <input
+								type="search" id="search" placeholder="Search..." /> <input
+								type=button class="btn btn-secondary" value="검색" onClick="">
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+		
+		
+		
+        
+        
+        
+        
+      <!--   <div>            
             <a href='#' onClick='fn_write()'>글쓰기</a>   
-            <a href="#" onClick="fn_delete()">삭제</a> <!-- 삭제할 항목 넣어줘야함 . -->
-        </div>
+            <a href="#" onClick="fn_delete()">삭제</a> 삭제할 항목 넣어줘야함 .
+        </div> -->
     </form>
     <form id="selectFilter" name="selectFilter" method="post">
     </form>

@@ -36,6 +36,6 @@ public interface CommunityBoardCommentServiceImpl {
 	 * @param commentVO
 	 * @return
 	 */
-	List<community_board_comment_Dto> SelectList(community_board_comment_Dto commentVO);
+	List<community_board_comment_Dto> commnetList(int cb_num);
 
 }

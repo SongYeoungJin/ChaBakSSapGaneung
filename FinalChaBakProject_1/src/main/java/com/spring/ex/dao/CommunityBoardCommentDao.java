@@ -1,6 +1,8 @@
 package com.spring.ex.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +24,10 @@ public class CommunityBoardCommentDao implements CommunityBoardCommentServiceImp
 	}
 	
 	@Override
-	public List<community_board_comment_Dto> SelectList(community_board_comment_Dto commentVO) {
-		return mybatis.selectList("board_comment_Mapper.commnetList", commentVO);
+	public List<community_board_comment_Dto> commnetList(int cb_num) {
+		Map<String,Object> map = new HashMap<String, Object>();
+		map.put("cb_num",cb_num);
+		return mybatis.selectList("board_comment_Mapper.commnetList", map);
 	}
 	
 	@Override
