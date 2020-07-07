@@ -60,4 +60,21 @@
 		  FROM market
 		 WHERE mar_num = #{mar_num}
     </select>
+
+
+
+	<select id="list_product" resultType="com.spring.ex.dto.Market_Dto">
+		<!-- 코드의 자료형을 알려준다 DTO타입으로 받아야 되므로 DTO파일의 경로를 입력. -->
+		<!-- 이 코드가 호출되면 ProductDTO가 arraylist로 저장됨 -->
+		select * from market
+		order by mar_num
+		<!-- id의 내림차순으로 검색한다. (id의 오름차순으로 검색 - 1,2,3,4,.....10) -->
+	</select>
+
+	<select id="detail_product" resultType="com.spring.ex.dto.Market_Dto">
+		select * from market
+		where mar_num=#{mar_num} 
+	</select>
+ 
+    
 </mapper>

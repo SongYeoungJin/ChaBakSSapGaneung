@@ -47,4 +47,16 @@ public class MarketDAOService implements MarketDAO{
    	 
         return UUID.randomUUID().toString().replaceAll("-", "");
     }
+    
+    
+    @Override
+    public List<Market_Dto> listProduct() {
+        return sqlSession.selectList("com.spring.ex.mapper.MarketMapper.list_product");
+    }
+    @Override
+    public Market_Dto detailProduct(int mar_num) { 
+        return sqlSession.selectOne(//sqlsession에 저장된 값중에 하나를 리턴한다 (상품번호)
+                "com.spring.ex.mapper.MarketMapper.detail_product",mar_num);
+        		//앞쪽에 namespace와 뒤쪽에 id를 적는다. 이렇게 해야 Mapper와 매핑이 된다.
+    }
 }
