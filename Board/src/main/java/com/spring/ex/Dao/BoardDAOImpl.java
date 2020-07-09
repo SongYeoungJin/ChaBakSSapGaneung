@@ -1,5 +1,6 @@
 package com.spring.ex.Dao;
 
+import java.sql.Date;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -20,8 +21,10 @@ public class BoardDAOImpl implements BoardDAO {
 	// 게시글 작성
 	@Override
 	public void write(Community_Board_Dto dto) throws Exception {
+	    java.util.Date date1 = new java.util.Date();
+	    java.sql.Date date2 = new java.sql.Date(date1.getTime());
+		dto.setCb_regdate(date2);
 		sqlSession.insert("boardMapper.insert", dto);
-		
 	}
 
 	// 게시물 목록 조회
@@ -40,8 +43,7 @@ public class BoardDAOImpl implements BoardDAO {
 	
 	// 게시물 조회
 	@Override
-	public Community_Board_Dto read(int cb_num) throws Exception {
-		
+	public Community_Board_Dto read(Community_Board_Dto cb_num) throws Exception {
 		return (Community_Board_Dto) sqlSession.selectOne("boardMapper.read", cb_num);
 	}
 
@@ -59,7 +61,6 @@ public class BoardDAOImpl implements BoardDAO {
 		sqlSession.delete("boardMapper.delete", cb_num);
 	}
 
-	
 }
 
 

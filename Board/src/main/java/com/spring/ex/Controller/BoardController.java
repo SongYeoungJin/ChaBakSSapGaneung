@@ -3,6 +3,8 @@ package com.spring.ex.Controller;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.spring.ex.Dao.BoardDAOImpl;
 import com.spring.ex.Dto.Community_Board_Comment_Dto;
 import com.spring.ex.Dto.Community_Board_Dto;
 import com.spring.ex.Dto.PageMaker;
@@ -36,16 +39,17 @@ public class BoardController {
 	
 	// 게시판 글 작성 화면
 	@RequestMapping(value = "/writeView", method = RequestMethod.GET)
-	public void writeView() throws Exception{
+	public void writeView(Community_Board_Dto dto) throws Exception{
 		logger.info("writeView");
-		
+		//response.setContentType("text/html); charset=UTF-8");
 	}
 	
 	// 게시판 글 작성
 	@RequestMapping(value = "/write", method = RequestMethod.POST)
-	public String write(Community_Board_Dto dto) throws Exception{
+	public String write(Model model,Community_Board_Dto dto) throws Exception{
 		logger.info("write");
 		
+		model.addAttribute("writeForm",dto);
 		service.write(dto);
 		
 		return "redirect:/board/list";
@@ -73,7 +77,7 @@ public class BoardController {
 		logger.info("read");
 		
 		// list에서 가져온 SearchCriteria값을 사용하기위해 매개변수에 파라미터를 통해 값을 받고 model을 이용하여 scri를 보내준다.
-		model.addAttribute("read", service.read(dto.getCb_num()));
+		//model.addAttribute("read", service.read(dto.getCb_num()));
 		// 게시판목록에서는 cb_num값이 다있기 때문에 불러와야한다. 
 		// 그러므로 cb_num값들은 dto에 있기 때문에 service를 실행할때 그번호를 넣어줘서 read라는 이름으로 값저장
 		
@@ -85,12 +89,32 @@ public class BoardController {
 		return "board/readView";
 	}
 	
+	//나현
+	@RequestMapping(value = "/readView1", method = RequestMethod.GET)
+	public String read1(HttpServletRequest request, Community_Board_Dto dto, @ModelAttribute("scri") SearchCriteria scri, Model model) throws Exception{
+		logger.info("read1");
+//		 int code = Integer.parseInt(request.getParameter("cb_num"));
+	//	 System.out.println(code);
+		//	model.addAttribute("code", service.read(code));
+			//System.out.println(model);
+	        //return "board/readView1";
+       // int code = Integer.parseInt(request.getParameter("cb_num"));
+       // dto.setCb_num(code);
+        
+        //Community_Board_Dto	resultVO = service.read(dto);
+        
+       // model.addAttribute("list", resultVO);
+        
+        return "board/readView1";
+	}
+	
 	// 게시판 수정뷰
 	@RequestMapping(value = "/updateView", method = RequestMethod.GET)
 	public String updateView(Community_Board_Dto dto, @ModelAttribute("scri") SearchCriteria scri, Model model) throws Exception{
 		logger.info("updateView");
-		
-		model.addAttribute("update", service.read(dto.getCb_num()));
+        int code = dto.getCb_num();
+        dto.setCb_num(code);
+		model.addAttribute("update", service.read(dto));
 		model.addAttribute("scri", scri);
 		
 		return "board/updateView";

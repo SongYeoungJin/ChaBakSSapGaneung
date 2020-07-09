@@ -11,7 +11,6 @@ public interface BoardDAO {
 
 	// 게시글 작성
 	public void write(Community_Board_Dto dto) throws Exception;
-	
 	// 게시물 목록 조회
 	public List<Community_Board_Dto> list(SearchCriteria scri) throws Exception;
 
@@ -19,11 +18,12 @@ public interface BoardDAO {
 	public int listCount(SearchCriteria scri) throws Exception;
 	
 	// 게시물 조회
-	public Community_Board_Dto read(int cb_num) throws Exception;
+	public Community_Board_Dto read(Community_Board_Dto cb_num) throws Exception;
 	
 	// 게시물 수정
 	public void update(Community_Board_Dto dto) throws Exception;
 	
 	// 게시물 삭제
 	public void delete(int cb_num) throws Exception;
+
 }

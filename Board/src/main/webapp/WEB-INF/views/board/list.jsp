@@ -13,6 +13,17 @@
 	 	<title>게시판</title>
 	</head>
 	<body>
+	<script>
+//글조회
+function fn_view(code){
+    var form = document.getElementById("viewForm");
+    var url = "<c:url value='readView1'/>";
+    url = url + "?cb_num=" + code;
+    
+    form.action = url;    
+    form.submit(); 
+}
+</script>
 		<div class="container">
 			<header>
 				<h1> 게시판</h1>
@@ -24,7 +35,7 @@
 			</div>
 			
 			<section id="container">
-				<form role="form" method="get">
+				<form role="form" id="viewForm" name="viewForm" method="GET">
 					<table class="table table-hover">
 						<thead>
 							<tr><th>번호</th><th>제목</th><th>작성자</th><th>등록일</th></tr>
@@ -33,19 +44,22 @@
 						<c:forEach items="${list}" var = "list">
 							<tr>
 								<td><c:out value="${list.cb_num}" /></td>
-								<td>
+								<!-- <td>
 									<a href="/ex/board/readView?cb_num=${list.cb_num}&
 																page=${scri.page}&
 																perPageNum=${scri.perPageNum}&
 																searchType=${scri.searchType}&
-																keyword=${scri.keyword}"><c:out value="${list.cb_title}" /></a>
-								</td>
-								<td><c:out value="${list.cb_author}" /></td>
-								<td><fmt:formatDate value="${list.cb_regdate}" pattern="yyyy-MM-dd"/></td>
+																keyword=${scri.keyword}">
+									<c:out value="${list.cb_title}"/></a>
+								</td>-->
+								<td><a href='#' onClick="fn_view('${list.cb_num}')"><c:out value="${list.cb_title }"/></a></td>
+								<td>${list.cb_author }</td>
+								<td><fmt:formatDate value="${list.cb_regdate}" pattern="yyyy-MM-dd" /></td>
 							</tr>
 						</c:forEach>
 						
 					</table>
+					<!-- 
 					<div class="search row">
 						<div class="col-xs-2 col-sm-2">
 							<select name="searchType" class="form-control">
@@ -65,16 +79,16 @@
 								</span>
 							</div>
 						</div>
-						 
+						 <!--
 						<script>
 							 $(function(){
 								 $('#searchBtn').click(function() {
 									 self.location = "list" + '${pageMaker.makeQuery(1)}' + "&searchType=" + $("select option:selected").val() + "&keyword=" + encodeURIComponent($('#keywordInput').val());
 								 });
 							 });   
-						</script>
-					</div>
-					<div class="col-md-offset-3">
+						</script>-->
+	</div>-->
+		<!-- 		<div class="col-md-offset-3">
 						<ul class="pagination">
 							<c:if test="${pageMaker.prev}">
 								<li><a href="list${pageMaker.makeSearch(pageMaker.startPage - 1)}">이전</a></li>
@@ -89,7 +103,7 @@
 								<li><a href="list${pageMaker.makeSearch(pageMaker.endPage + 1)}">다음</a></li>
 							</c:if> 
 						</ul>
-					</div>
+					</div>-->
 				</form>
 			</section>
 		</div>

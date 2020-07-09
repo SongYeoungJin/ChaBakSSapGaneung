@@ -18,12 +18,14 @@ public interface BoardService {
 	public int listCount(SearchCriteria scri) throws Exception;
 	
 	// 게시물 조회
-	public Community_Board_Dto read(int cb_num) throws Exception;
+	public Community_Board_Dto read(Community_Board_Dto cb_num) throws Exception;
+	 
 	
 	// 게시물 수정
 	public void update(Community_Board_Dto dto) throws Exception;
 	
 	// 게시물 삭제
 	public void delete(int cb_num) throws Exception;
+
 	
 }

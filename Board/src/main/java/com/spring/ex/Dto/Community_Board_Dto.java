@@ -7,7 +7,15 @@ public class Community_Board_Dto {
 	private String cb_title;		
 	private String cb_memo;			
 	private String cb_author;		
-	private Date cb_regdate;
+	private java.sql.Date cb_regdate;
+	
+
+	public java.sql.Date getCb_regdate() {
+		return cb_regdate;
+	}
+	public void setCb_regdate(java.sql.Date cb_regdate) {
+		this.cb_regdate = cb_regdate;
+	}
 	public int getCb_num() {
 		return cb_num;
 	}
@@ -32,10 +40,9 @@ public class Community_Board_Dto {
 	public void setCb_author(String cb_author) {
 		this.cb_author = cb_author;
 	}
-	public Date getCb_regdate() {
-		return cb_regdate;
-	}
-	public void setCb_regdate(Date cb_regdate) {
-		this.cb_regdate = cb_regdate;
+	
+	public String toString() {
+		return "Community_Board_Dto [cb_num=" + cb_num + ",cb_title" + cb_title + ",cb_memo" + cb_memo 
+				+ ",cb_author" + cb_author + "]";
 	}
 }

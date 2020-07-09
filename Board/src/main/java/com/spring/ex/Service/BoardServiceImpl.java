@@ -23,6 +23,11 @@ public class BoardServiceImpl implements BoardService {
 	// 게시글 작성
 	@Override
 	public void write(Community_Board_Dto dto) throws Exception {
+		
+		System.out.println("성공");
+		for(int i=0;i<4;i++) {
+			System.out.println(dto);
+		}
 		dao.write(dto);
 	}
 
@@ -40,7 +45,7 @@ public class BoardServiceImpl implements BoardService {
 	
 	// 게시물 조회
 	@Override
-	public Community_Board_Dto read(int cb_num) throws Exception {
+	public Community_Board_Dto read(Community_Board_Dto cb_num) throws Exception {
 
 		return dao.read(cb_num);
 	}
